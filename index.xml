@@ -1,0 +1,2213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skin>
+    <information>
+        <name>친효스킨 v2.4</name>
+        <version>2.4</version>
+        <description>
+            <![CDATA[웹표준을 준수한 XHTML 기반의 티스토리 반응형 스킨입니다. 스킨 저작권은 "친절한효자손"에게 있습니다.]]>
+        </description>
+        <license>
+            <![CDATA[편집가능 / 배포금지 / 푸터 제작자표시 편집금지 / 상업적사용 금지]]>
+        </license>
+    </information>
+    <author>
+        <name>친절한효자손</name>
+        <homepage>https://rgy0409.tistory.com</homepage>
+        <email>rgy0409@gmail.com</email>
+    </author>
+    <default>
+        <entriesOnPage>30</entriesOnPage>
+        <entriesOnList>30</entriesOnList>
+        <recentEntries>5</recentEntries>
+        <recentComments>5</recentComments>
+        <recentTrackbacks>5</recentTrackbacks>
+        <itemsOnGuestbook>30</itemsOnGuestbook>
+        <tagsInCloud>30</tagsInCloud>
+        <sortInCloud>1</sortInCloud>
+        <expandComment>1</expandComment>
+        <expandTrackback>0</expandTrackback>
+        <lengthOfRecentEntry>38</lengthOfRecentEntry>
+        <lengthOfRecentComment>38</lengthOfRecentComment>
+        <lengthOfRecentNotice>38</lengthOfRecentNotice>
+        <lengthOfRecentTrackback>38</lengthOfRecentTrackback>
+        <lengthOfLink>30</lengthOfLink>
+        <showListOnCategory>1</showListOnCategory>
+        <showListOnArchive>1</showListOnArchive>
+        <commentMessage>
+            <none>댓글이 없습니다.</none>
+            <single>댓글 &lt;span class="cnt"&gt;하나&lt;/span&gt; 달렸습니다.</single>
+        </commentMessage>
+        <trackbackMessage>
+            <none>받은 트랙백이 없고</none>
+            <single>트랙백이 &lt;span class="cnt"&gt;하나&lt;/span&gt;이고</single>
+        </trackbackMessage>
+        <tree>
+            <color>000000</color>
+            <bgColor>ffffff</bgColor>
+            <activeColor>000000</activeColor>
+            <activeBgColor>eeeeee</activeBgColor>
+            <labelLength>40</labelLength>
+            <showValue>1</showValue>
+        </tree>
+        <contentWidth>860</contentWidth>
+        <cover>
+            <![CDATA[
+			[
+				{
+					"name": "rgy-cover-list",
+					"title": "최신글 리스트 커버",
+					"dataType": "RECENT",
+					"data": {"category":"ALL","size":10}
+				}
+			]
+			]]>
+        </cover>
+    </default>
+    <cover>
+        <item>
+            <name>rgy-cover-widebar</name>
+            <label>
+                <![CDATA[ 와이드바(AD) ]]>
+            </label>
+            <description>
+                <![CDATA[ 와이드바 스타일의 커버입니다. 썸네일이 꽉 차있는 형태이며 마우스를 올릴 시 다양한 방향에서 제목과 본문 내용 일부, 카테고리, 작성일, URL이 나타납니다. ]]>
+            </description>
+        </item>
+        <item>
+            <name>rgy-cover-gallery</name>
+            <label>
+                <![CDATA[ 갤러리 ]]>
+            </label>
+            <description>
+                <![CDATA[ 갤러리 스타일의 커버입니다. 썸네일이 꽉 차있는 형태이며 마우스를 올릴 시 아래에서 위로 제목과 카테고리, 작성일이 표시된 살짝 투명한 상자가 올라옵니다. ]]>
+            </description>
+        </item>
+        <item>
+            <name>rgy-cover-gallery2</name>
+            <label>
+                <![CDATA[ 갤러리2 ]]>
+            </label>
+            <description>
+                <![CDATA[ 갤러리2 스타일의 커버입니다. 썸네일이 꽉 차있는 형태이며 마우스를 올릴 시 제목과 카테고리, 작성일이 서서히 보이고 썸네일은 블루어 처리됩니다. ]]>
+            </description>
+        </item>
+        <item>
+            <name>rgy-cover-grid</name>
+            <label>
+                <![CDATA[ 그리드 ]]>
+            </label>
+            <description>
+                <![CDATA[ 그리드 스타일의 커버입니다. 썸네일이 위에, 제목과 본문 텍스트 일부, 카테고리 및 작성일은 아래에 표시됩니다. ]]>
+            </description>
+        </item>
+        <item>
+            <name>rgy-cover-list</name>
+            <label>
+                <![CDATA[ 리스트(AD) ]]>
+            </label>
+            <description>
+                <![CDATA[ 리스트 스타일의 커버입니다. 친효스킨의 기본 형태로 썸네일은 왼쪽에, 제목과 본문 텍스트 일부, 카테고리 및 작성일은 오른쪽에 표시됩니다. 인피드 광고를 삽입할 수 있습니다. ]]>
+            </description>
+        </item>
+    </cover>
+    <variables>
+        <variablegroup name="애드센스(클라이언트)">
+            <variable>
+                <name>rgy-adss-client</name>
+                <label>
+                    <![CDATA[ 애드센스 Client ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>ca-pub-번호</default>
+                <description>
+                    <![CDATA[ 애드센스의 클라이언트값을 입력합니다. ]]>
+                </description>
+            </variable>
+        </variablegroup>
+        <variablegroup name="애드센스(광고)">
+            <variable>
+                <name>rgy-cover-widebar-adss-onoff</name>
+                <label>
+                    <![CDATA[ 와이드바 커버 애드센스 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 메인화면 와이드바 커버 광고를 사용합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-cover-widebar-adss-slot</name>
+                <label>
+                    <![CDATA[ 와이드바 커버 Slot ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>번호</default>
+                <description>
+                    <![CDATA[ 와이드바 커버 광고의 슬롯값을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-cover-widebar-adss-count</name>
+                <label>
+                    <![CDATA[ 와이드바 커버 간격 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>3</default>
+                <description>
+                    <![CDATA[ 와이드바 커버 광고의 간격 개수를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-cover-list-infeed-adss-onoff</name>
+                <label>
+                    <![CDATA[ 리스트커버+인피드 애드센스 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 메인화면 리스트 커버 + 인피드 광고를 사용합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-cover-list-infeed-adss-layoutkey</name>
+                <label>
+                    <![CDATA[ 리스트커버+인피드 Layout ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>-g7+u-1b-h1+100</default>
+                <description>
+                    <![CDATA[ 리스트 커버 + 인피드 광고의 레이아웃키 값을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-cover-list-infeed-adss-slot</name>
+                <label>
+                    <![CDATA[ 리스트커버+인피드 Slot ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>번호</default>
+                <description>
+                    <![CDATA[ 리스트 커버 + 인피드 광고의 슬롯값을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-cover-list-infeed-adss-count</name>
+                <label>
+                    <![CDATA[ 리스트커버+인피드 간격 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>5</default>
+                <description>
+                    <![CDATA[ 리스트 커버 + 인피드 광고의 간격 개수를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-top-adss</name>
+                <label>
+                    <![CDATA[ 최상단 애드센스 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 최상단 애드센스를 사용합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-top-adss-slot</name>
+                <label>
+                    <![CDATA[ 최상단 애드센스 Slot ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>번호</default>
+                <description>
+                    <![CDATA[ 최상단 애드센스의 슬롯값을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-bottom-adss</name>
+                <label>
+                    <![CDATA[ 최하단 애드센스 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 최하단 애드센스를 사용합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-bottom-adss-slot</name>
+                <label>
+                    <![CDATA[ 최하단 애드센스 Slot ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>번호</default>
+                <description>
+                    <![CDATA[ 최하단 애드센스의 슬롯값을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-article-top-adss</name>
+                <label>
+                    <![CDATA[ 본문상단 애드센스 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 본문상단 애드센스를 사용합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-top-adsense-app</name>
+                <label>
+                    <![CDATA[ 티스토리앱 본문상단 애드센스 비활성화 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 티스토리앱의 본문상단 애드센스를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-article-top-adss-slot-left</name>
+                <label>
+                    <![CDATA[ 본문상단(좌) 애드센스 Slot ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>번호</default>
+                <description>
+                    <![CDATA[ 본문상단 좌측 애드센스의 슬롯값을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-article-top-adss-slot-right</name>
+                <label>
+                    <![CDATA[ 본문상단(우) 애드센스 Slot ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>번호</default>
+                <description>
+                    <![CDATA[ 본문상단 우측 애드센스의 슬롯값을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-article-bottom-adss</name>
+                <label>
+                    <![CDATA[ 본문하단 애드센스 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 본문하단 애드센스를 사용합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-article-bottom-adss-slot</name>
+                <label>
+                    <![CDATA[ 본문하단 애드센스 Slot ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>번호</default>
+                <description>
+                    <![CDATA[ 본문하단 애드센스의 슬롯값을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-article-bottom-targetcontent-adss</name>
+                <label>
+                    <![CDATA[ 본문하단(일치하는콘텐츠) 애드센스 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 본문하단(일치하는콘텐츠) 애드센스를 사용합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-article-bottom-targetcontent-adss-slot</name>
+                <label>
+                    <![CDATA[ 본문하단(일치하는콘텐츠) 애드센스 Slot ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>번호</default>
+                <description>
+                    <![CDATA[ 본문하단(일치하는콘텐츠) 일치하는 콘텐츠 애드센스의 슬롯값을 입력합니다. ]]>
+                </description>
+            </variable>
+        </variablegroup>
+        <variablegroup name="추천글 모듈 설정">
+            <variable>
+                <name>recommend-title</name>
+                <label>
+                    <![CDATA[ 모듈 타이틀 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 추천글 모듈의 타이틀(제목)을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-recommend1</name>
+                <label>
+                    <![CDATA[ 추천글1 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글1을(를) ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-link1</name>
+                <label>
+                    <![CDATA[ 추천글1 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>https://</default>
+                <description>
+                    <![CDATA[ 추천글1 URL 주소를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-text1</name>
+                <label>
+                    <![CDATA[ 추천글1 글 제목 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>글 제목</default>
+                <description>
+                    <![CDATA[ 추천글1 글 제목을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-hot-badge1</name>
+                <label>
+                    <![CDATA[ 추천글1 HOT뱃지 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글1 HOT뱃지를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-new-badge1</name>
+                <label>
+                    <![CDATA[ 추천글1 NEW뱃지 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글1 NEW뱃지를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-recommend2</name>
+                <label>
+                    <![CDATA[ 추천글2 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글2을(를) ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-link2</name>
+                <label>
+                    <![CDATA[ 추천글2 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>https://</default>
+                <description>
+                    <![CDATA[ 추천글2 URL 주소를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-text2</name>
+                <label>
+                    <![CDATA[ 추천글2 글 제목 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>글 제목</default>
+                <description>
+                    <![CDATA[ 추천글2 글 제목을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-hot-badge2</name>
+                <label>
+                    <![CDATA[ 추천글2 HOT뱃지 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글2 HOT뱃지를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-new-badge2</name>
+                <label>
+                    <![CDATA[ 추천글2 NEW뱃지 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글2 NEW뱃지를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-recommend3</name>
+                <label>
+                    <![CDATA[ 추천글3 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글3을(를) ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-link3</name>
+                <label>
+                    <![CDATA[ 추천글3 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>https://</default>
+                <description>
+                    <![CDATA[ 추천글3 URL 주소를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-text3</name>
+                <label>
+                    <![CDATA[ 추천글3 글 제목 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>글 제목</default>
+                <description>
+                    <![CDATA[ 추천글3 글 제목을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-hot-badge3</name>
+                <label>
+                    <![CDATA[ 추천글3 HOT뱃지 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글3 HOT뱃지를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-new-badge3</name>
+                <label>
+                    <![CDATA[ 추천글3 NEW뱃지 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글3 NEW뱃지를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-recommend4</name>
+                <label>
+                    <![CDATA[ 추천글4 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글4을(를) ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-link4</name>
+                <label>
+                    <![CDATA[ 추천글4 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>https://</default>
+                <description>
+                    <![CDATA[ 추천글4 URL 주소를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-text4</name>
+                <label>
+                    <![CDATA[ 추천글4 글 제목 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>글 제목</default>
+                <description>
+                    <![CDATA[ 추천글4 글 제목을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-hot-badge4</name>
+                <label>
+                    <![CDATA[ 추천글4 HOT뱃지 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글4 HOT뱃지를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-new-badge4</name>
+                <label>
+                    <![CDATA[ 추천글4 NEW뱃지 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글4 NEW뱃지를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-recommend5</name>
+                <label>
+                    <![CDATA[ 추천글5 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글5을(를) ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-link5</name>
+                <label>
+                    <![CDATA[ 추천글5 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>https://</default>
+                <description>
+                    <![CDATA[ 추천글5 URL 주소를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-text5</name>
+                <label>
+                    <![CDATA[ 추천글5 글 제목 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>글 제목</default>
+                <description>
+                    <![CDATA[ 추천글5 글 제목을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-hot-badge5</name>
+                <label>
+                    <![CDATA[ 추천글5 HOT뱃지 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글5 HOT뱃지를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>recommend-new-badge5</name>
+                <label>
+                    <![CDATA[ 추천글5 NEW뱃지 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 추천글5 NEW뱃지를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+        </variablegroup>
+        <variablegroup name="프로필 모듈 설정">
+            <variable>
+                <name>rgy-profile-img</name>
+                <label>
+                    <![CDATA[ 프로필 이미지 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 프로필 이미지를 ON/OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-profile-sns</name>
+                <label>
+                    <![CDATA[ 프로필 SNS 아이콘 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 프로필 아래 SNS 바로가기 아이콘을 ON/OFF 합니다. ]]>
+                </description>
+            </variable>
+        </variablegroup>
+        <variablegroup name="프로필 SNS 아이콘 개별 설정 (최대 5개까지 선택)">
+            <variable>
+                <name>favorite-icon</name>
+                <label>
+                    <![CDATA[ 즐겨찾기 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 즐겨찾기 아이콘을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>favorite</name>
+                <label>
+                    <![CDATA[ 즐겨찾기 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>입력</default>
+                <description>
+                    <![CDATA[ 즐겨찾기 URL을 입력해주세요. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>facebook-icon</name>
+                <label>
+                    <![CDATA[ 페이스북 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 페이스북 아이콘을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>facebook</name>
+                <label>
+                    <![CDATA[ 페이스북 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>입력</default>
+                <description>
+                    <![CDATA[ 페이스북 URL을 입력해주세요. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>twitter-icon</name>
+                <label>
+                    <![CDATA[ 트위터 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 트위터 아이콘을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>twitter</name>
+                <label>
+                    <![CDATA[ 트위터 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>입력</default>
+                <description>
+                    <![CDATA[ 트위터 URL을 입력해주세요. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>instagram-icon</name>
+                <label>
+                    <![CDATA[ 인스타그램 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 인스타그램 아이콘을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>instagram</name>
+                <label>
+                    <![CDATA[ 인스타그램 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>입력</default>
+                <description>
+                    <![CDATA[ 인스타그램 URL을 입력해주세요. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>youtube-icon</name>
+                <label>
+                    <![CDATA[ 유튜브 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 유튜브 아이콘을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>youtube</name>
+                <label>
+                    <![CDATA[ 유튜브 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>입력</default>
+                <description>
+                    <![CDATA[ 유튜브 URL을 입력해주세요. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>twitch-icon</name>
+                <label>
+                    <![CDATA[ 트위치 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 트위치 아이콘을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>twitch</name>
+                <label>
+                    <![CDATA[ 트위치 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>입력</default>
+                <description>
+                    <![CDATA[ 트위치 URL을 입력해주세요. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>github-icon</name>
+                <label>
+                    <![CDATA[ 깃헙 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 깃헙 아이콘을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>github</name>
+                <label>
+                    <![CDATA[ 깃헙 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>입력</default>
+                <description>
+                    <![CDATA[ 깃헙 URL을 입력해주세요. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>kakaotalk-icon</name>
+                <label>
+                    <![CDATA[ 카카오톡 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 카카오톡 아이콘을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>kakaotalk</name>
+                <label>
+                    <![CDATA[ 카카오톡 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>입력</default>
+                <description>
+                    <![CDATA[ 카카오톡 URL을 입력해주세요. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>email-icon</name>
+                <label>
+                    <![CDATA[ 이메일 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 이메일 아이콘을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>email</name>
+                <label>
+                    <![CDATA[ 이메일 주소 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>email@gmail.com</default>
+                <description>
+                    <![CDATA[ 이메일 주소를 입력해주세요. ]]>
+                </description>
+            </variable>
+        </variablegroup>
+        <variablegroup name="사업자 정보 설정">
+            <variable>
+                <name>rgy-business-info</name>
+                <label>
+                    <![CDATA[ 사업자 정보 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 사업자 정보를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-sangho</name>
+                <label>
+                    <![CDATA[ 상호명 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 상호명을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-daepyo</name>
+                <label>
+                    <![CDATA[ 대표자 성명 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 대표자 이름을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-business-num</name>
+                <label>
+                    <![CDATA[ 사업자등록번호 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 사업자등록번호를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-singo-num-onoff</name>
+                <label>
+                    <![CDATA[ 통신판매신고번호 ON/OFF ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 통신판매신고번호를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-singo-num</name>
+                <label>
+                    <![CDATA[ 통신판매신고번호 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 통신판매신고번호를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-adress</name>
+                <label>
+                    <![CDATA[ 주소 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 사업장 주소를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-phone</name>
+                <label>
+                    <![CDATA[ 전화번호 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 전화번호를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-email</name>
+                <label>
+                    <![CDATA[ 이메일주소 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 이메일 주소를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-cybermall-url</name>
+                <label>
+                    <![CDATA[ 사이버몰 이용약관 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>https://</default>
+                <description>
+                    <![CDATA[ 사이버몰 이용약관 URL 주소를 입력합니다. ]]>
+                </description>
+            </variable>
+        </variablegroup>
+        <variablegroup name="본문 설정">
+            <variable>
+                <name>rgy-article-fontfamily</name>
+                <label>
+                    <![CDATA[ 본문 글꼴 ]]>
+                </label>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[[{"name":"rgy-article-fontfamily-ilopkebatang","label":"이롭게바탕체","value":"rgy-article-fontfamily-ilopkebatang"},{"name":"rgy-article-fontfamily-notosanskr","label":"본고딕","value":"rgy-article-fontfamily-notosanskr"},{"name":"rgy-article-fontfamily-basic","label":"기본글꼴","value":"rgy-article-fontfamily-basic"}]]]>
+                </option>
+                <default>rgy-article-fontfamily-ilopkebatang</default>
+                <description>
+                    <![CDATA[ 본문의 글꼴을 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>articleFontSizeM</name>
+                <label>
+                    <![CDATA[ 폰트크기(모바일) ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>1em</default>
+                <description>
+                    <![CDATA[ 모바일 해상도의 본문 폰트 크기를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>articleFontSizePC</name>
+                <label>
+                    <![CDATA[ 폰트크기(PC) ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>1.1em</default>
+                <description>
+                    <![CDATA[ PC 해상도의 본문 폰트 크기를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>articleLineHeightM</name>
+                <label>
+                    <![CDATA[ 줄간격(모바일) ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>1.5em</default>
+                <description>
+                    <![CDATA[ 모바일 해상도의 문장 줄간격을 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>articleLineHeightPC</name>
+                <label>
+                    <![CDATA[ 줄간격(PC) ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>1.6em</default>
+                <description>
+                    <![CDATA[ PC 해상도의 문장 줄간격을 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>articleLetterSpacing</name>
+                <label>
+                    <![CDATA[ 자간 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>0</default>
+                <description>
+                    <![CDATA[ 문장의 글자 간격을 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>articleFirstletterSpacing</name>
+                <label>
+                    <![CDATA[ 들여쓰기 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>10px</default>
+                <description>
+                    <![CDATA[ 문장의 첫 글자 간격을 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-article-img-border</name>
+                <label>
+                    <![CDATA[ 본문 이미지 테두리 ]]>
+                </label>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[[{"name":"rgy-article-img-border-on","label":"테두리있음","value":"rgy-article-img-border-on"},{"name":"rgy-article-img-border-off","label":"테두리없음","value":"rgy-article-img-border-off"}]]]>
+                </option>
+                <default>rgy-article-img-border-on</default>
+                <description>
+                    <![CDATA[ 본문 이미지 테두리를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-article-autolink</name>
+                <label>
+                    <![CDATA[ 본문 자동링크생성 스타일 ]]>
+                </label>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[[{"name":"rgy-article-autolink-on","label":"축소버전","value":"rgy-article-autolink-on"},{"name":"rgy-article-autolink-off","label":"오리지널","value":"rgy-article-autolink-off"}]]]>
+                </option>
+                <default>rgy-article-autolink-on</default>
+                <description>
+                    <![CDATA[ 본문 자동 링크 생성 스타일을 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-chAddOn-articleBold</name>
+                <label>
+                    <![CDATA[ 본문 BOLD 처리 ]]>
+                </label>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[[{"name":"rgy-chAddOn-articleBoldOn","label":"형광펜모드","value":"rgy-chAddOn-articleBoldOn"},{"name":"rgy-chAddOn-articleBoldOff","label":"두껍게","value":"rgy-chAddOn-articleBoldOff"}]]]>
+                </option>
+                <default>rgy-chAddOn-articleBoldOn</default>
+                <description>
+                    <![CDATA[ 본문의 Bold 처리를 형광펜모드 또는 굵게 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgyArticleBoldColor</name>
+                <label>
+                    <![CDATA[ 형광펜 글씨색 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#222</default>
+                <description>
+                    <![CDATA[ 형광펜 글씨색을 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgyArticleBoldBGColor</name>
+                <label>
+                    <![CDATA[ 형광펜 배경색 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#C0FFEE</default>
+                <description>
+                    <![CDATA[ 형광펜 배경색을 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-article-table-fontsize</name>
+                <label>
+                    <![CDATA[ 본문표 폰트크기 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>14px</default>
+                <description>
+                    <![CDATA[ 본문 표의 폰트 크기를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>articleLinkColor</name>
+                <label>
+                    <![CDATA[ 본문 링크 색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#1D67B1</default>
+                <description>
+                    <![CDATA[ 본문 기본 링크 색상을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>articleListColor</name>
+                <label>
+                    <![CDATA[ 본문 리스트 색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#888</default>
+                <description>
+                    <![CDATA[ 본문 기본 리스트 색상을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>articleListLinkColor</name>
+                <label>
+                    <![CDATA[ 본문 리스트 링크 색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#1D67B1</default>
+                <description>
+                    <![CDATA[ 본문 기본 리스트 링크 색상을 선택합니다. ]]>
+                </description>
+            </variable>
+        </variablegroup>
+        <variablegroup name="댓글 설정">
+            <variable>
+                <name>rgy-comment-onoff</name>
+                <label>
+                    <![CDATA[ 댓글창 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 본문 댓글을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-article-reply</name>
+                <label>
+                    <![CDATA[ 댓글 정렬 순서 ]]>
+                </label>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[[{"name":"rgy-article-reply-new","label":"최신순(역순)","value":"rgy-article-reply-new"},{"name":"rgy-article-reply-origin","label":"작성순(오리지널)","value":"rgy-article-reply-origin"}]]]>
+                </option>
+                <default>rgy-article-reply-new</default>
+                <description>
+                    <![CDATA[ 댓글 정렬 방식을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgyArticleReplyFontsize</name>
+                <label>
+                    <![CDATA[ 댓글 폰트 크기 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>13px</default>
+                <description>
+                    <![CDATA[ 댓글의 폰트 크기를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgyArticleReplyLineheight</name>
+                <label>
+                    <![CDATA[ 댓글 폰트 줄간격 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>1.3rem</default>
+                <description>
+                    <![CDATA[ 댓글의 폰트 줄간격을 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgyReplyBackgroundColor</name>
+                <label>
+                    <![CDATA[ 댓글 레이아웃 배경색 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#FFF</default>
+                <description>
+                    <![CDATA[ 댓글 레이아웃의 배경색을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgyReplyLineColor</name>
+                <label>
+                    <![CDATA[ 댓글 구분선 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#CCC</default>
+                <description>
+                    <![CDATA[ 댓글 구분선의 색을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>replyBGColor</name>
+                <label>
+                    <![CDATA[ 상대방댓글 배경색 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#EEE</default>
+                <description>
+                    <![CDATA[ 상대방이 남긴 댓글 배경색을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>replyColor</name>
+                <label>
+                    <![CDATA[ 상대방댓글 텍스트 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#333</default>
+                <description>
+                    <![CDATA[ 상대방이 남긴 댓글 글씨색을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>replyBGColor2</name>
+                <label>
+                    <![CDATA[ 내답글 배경색 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#555</default>
+                <description>
+                    <![CDATA[ 자신이 남긴 답글 배경색을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>replyColor2</name>
+                <label>
+                    <![CDATA[ 내답글 텍스트 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#FFF</default>
+                <description>
+                    <![CDATA[ 자신이 남긴 답글 글씨색을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>replyName</name>
+                <label>
+                    <![CDATA[ 닉네임 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#404040</default>
+                <description>
+                    <![CDATA[ 닉네임의 색을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>replyIcon</name>
+                <label>
+                    <![CDATA[ 아이콘 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#555</default>
+                <description>
+                    <![CDATA[ 아이콘의 색을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>replyDate</name>
+                <label>
+                    <![CDATA[ 작성날짜 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#CCC</default>
+                <description>
+                    <![CDATA[ 작성 날짜의 색을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>replyReport</name>
+                <label>
+                    <![CDATA[ 신고버튼 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#FF5544</default>
+                <description>
+                    <![CDATA[ 신고 버튼의 색을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>moreReplyBG</name>
+                <label>
+                    <![CDATA[ 이전댓글 더보기 배경색 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#555</default>
+                <description>
+                    <![CDATA[ 이전댓글 더보기 버튼의 배경색을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>moreReplyColor</name>
+                <label>
+                    <![CDATA[ 이전댓글 더보기 텍스트 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#FFF</default>
+                <description>
+                    <![CDATA[ 이전댓글 더보기 버튼의 텍스트 색을 선택합니다. ]]>
+                </description>
+            </variable>
+        </variablegroup>
+        <variablegroup name="레이아웃 설정">
+            <variable>
+                <name>rgy-darkmode</name>
+                <label>
+                    <![CDATA[ 다크모드 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 친효스킨 다크모드를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-thumbnail</name>
+                <label>
+                    <![CDATA[ 대표 썸네일 ]]>
+                </label>
+                <type>IMAGE</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 대표 썸네일 이미지를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-blogger-name</name>
+                <label>
+                    <![CDATA[ 블로그닉네임 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 티스토리의 닉네임을 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-blogmenu</name>
+                <label>
+                    <![CDATA[ 블로그메뉴 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 블로그 메뉴를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-header-home</name>
+                <label>
+                    <![CDATA[ 헤더-홈버튼 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 헤더에 있는 홈버튼을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-header-all</name>
+                <label>
+                    <![CDATA[ 헤더-전체글버튼 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 헤더에 있는 전체글버튼을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-header-guestbook</name>
+                <label>
+                    <![CDATA[ 헤더-방명록버튼 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 헤더에 있는 방명록버튼을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-header-write</name>
+                <label>
+                    <![CDATA[ 헤더-글쓰기버튼 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 헤더에 있는 글쓰기버튼을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-header-manager</name>
+                <label>
+                    <![CDATA[ 헤더-관리자버튼 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 헤더에 있는 관리자버튼을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-topbtn-set</name>
+                <label>
+                    <![CDATA[ TOP버튼 꾸러미 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ TOP버튼 관련 세트를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-topbtnmobilehide-element</name>
+                <label>
+                    <![CDATA[ TOP버튼 모바일 설정 ]]>
+                </label>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[[{"name":"rgy-topbtnmobilehide-on","label":"모바일 보이기","value":"rgy-topbtnmobilehide-on"},{"name":"rgy-topbtnmobilehide-off","label":"모바일 숨기기","value":"rgy-topbtnmobilehide-off"},{"name":"rgy-topbtnmobilehide-mleft","label":"모바일 왼쪽","value":"rgy-topbtnmobilehide-mleft"}]]]>
+                </option>
+                <default>rgy-topbtnmobilehide-on</default>
+                <description>
+                    <![CDATA[ TOP버튼을 모바일 해상도에서 ON / OFF / LEFT 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>topBtnOpacity</name>
+                <label>
+                    <![CDATA[ TOP버튼 세트 투명도 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>1</default>
+                <description>
+                    <![CDATA[ TOP버튼 세트의 투명도를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>topBtnLocation</name>
+                <label>
+                    <![CDATA[ TOP버튼 세트 세로축 위치 설정 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>220px</default>
+                <description>
+                    <![CDATA[ TOP버튼 세트의 세로축 위치를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-topbtn-list</name>
+                <label>
+                    <![CDATA[ 목차버튼 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 목차버튼을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-topbtn-up</name>
+                <label>
+                    <![CDATA[ TOP버튼 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>TRUE</default>
+                <description>
+                    <![CDATA[ TOP버튼을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-main-tryangle</name>
+                <label>
+                    <![CDATA[ 메인삼각형 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 메인화면의 삼각형 아이콘을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgyCoverWidebarThumbnailHeight</name>
+                <label>
+                    <![CDATA[ 와이드바 커버 썸네일 세로 사이즈 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>250px</default>
+                <description>
+                    <![CDATA[ 와이드바 커버 썸네일의 세로 사이즈를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgyCoverGalleryThumbnailHeight</name>
+                <label>
+                    <![CDATA[ 갤러리 커버 썸네일 세로 사이즈 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>250px</default>
+                <description>
+                    <![CDATA[ 갤러리 커버 썸네일의 세로 사이즈를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgyCoverGallery2ThumbnailHeight</name>
+                <label>
+                    <![CDATA[ 갤러리2 커버 썸네일 세로 사이즈 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>250px</default>
+                <description>
+                    <![CDATA[ 갤러리2 커버 썸네일의 세로 사이즈를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgyCoverGridThumbnailHeight</name>
+                <label>
+                    <![CDATA[ 그리드 커버 썸네일 세로 사이즈 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>120px</default>
+                <description>
+                    <![CDATA[ 그리드 커버 썸네일의 세로 사이즈를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>containerWidth</name>
+                <label>
+                    <![CDATA[ 스킨 가로 사이즈 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>1200px</default>
+                <description>
+                    <![CDATA[ 스킨의 가로 사이즈를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>borderRadius</name>
+                <label>
+                    <![CDATA[ 둥글기 값 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>0</default>
+                <description>
+                    <![CDATA[ 모서리의 둥글기값을 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-containerLC-element</name>
+                <label>
+                    <![CDATA[ 콘텐츠 가운데/좌측 ]]>
+                </label>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[[{"name":"rgy-container-center","label":"콘텐츠 가운데","value":"rgy-container-center"},{"name":"rgy-container-left","label":"콘텐츠 좌측","value":"rgy-container-left"}]]]>
+                </option>
+                <default>rgy-container-center</default>
+                <description>
+                    <![CDATA[ 콘텐츠를 가운데 또는 좌측으로 배치 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-contentsLR-element</name>
+                <label>
+                    <![CDATA[ 본문 왼쪽/오른쪽 ]]>
+                </label>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[[{"name":"rgy-contents-right","label":"본문 오른쪽","value":"rgy-contents-right"},{"name":"rgy-contents-left","label":"본문 왼쪽","value":"rgy-contents-left"}]]]>
+                </option>
+                <default>rgy-contents-right</default>
+                <description>
+                    <![CDATA[ 본문을 왼쪽 또는 오른쪽으로 배치 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-sidebar-element</name>
+                <label>
+                    <![CDATA[ 사이드바 ON/OFF/STICKY ]]>
+                </label>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[[{"name":"rgy-sidebar-on","label":"사이드바 ON","value":"rgy-sidebar-on"},{"name":"rgy-sidebar-off","label":"사이드바 OFF","value":"rgy-sidebar-off"},{"name":"rgy-sidebar-stk","label":"사이드바 STICKY","value":"rgy-sidebar-stk"}]]]>
+                </option>
+                <default>rgy-sidebar-on</default>
+                <description>
+                    <![CDATA[ 사이드바를 ON / OFF / STICKY 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-sidebar-mobile-element</name>
+                <label>
+                    <![CDATA[ 사이드바 모바일 ]]>
+                </label>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[[{"name":"","label":"보이기","value":""},{"name":"rgy-sidebar-mobile-off","label":"숨기기","value":"rgy-sidebar-mobile-off"}]]]>
+                </option>
+                <default></default>
+                <description>
+                    <![CDATA[ 사이드바를 모바일 해상도에서 보이거나 숨기기 설정을 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>chskinloading</name>
+                <label>
+                    <![CDATA[ 스킨로딩 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 스킨로딩을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-loadingimg</name>
+                <label>
+                    <![CDATA[ 스킨로딩 이미지 ]]>
+                </label>
+                <type>IMAGE</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 스킨로딩 이미지를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-loadingimgsize</name>
+                <label>
+                    <![CDATA[ 스킨로딩 이미지 사이즈 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>1</default>
+                <description>
+                    <![CDATA[ 스킨로딩 이미지 사이즈를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-loadingcolor</name>
+                <label>
+                    <![CDATA[ 스킨로딩 스핀컬러 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#fff</default>
+                <description>
+                    <![CDATA[ 스킨로딩 이미지 주위를 회전하는 스핀 컬러를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-ctrlc-ctrlv-prevention</name>
+                <label>
+                    <![CDATA[ Ctrl+C/V 방지 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ Ctrl+C/V를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-bodycopy-prevention</name>
+                <label>
+                    <![CDATA[ 마우스우클릭 방지 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 마우스 드래그 및 우클릭을 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>mainColor</name>
+                <label>
+                    <![CDATA[ 메인색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#555</default>
+                <description>
+                    <![CDATA[ 메인 색상을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>mainFontColor</name>
+                <label>
+                    <![CDATA[ 메인폰트색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#FFF</default>
+                <description>
+                    <![CDATA[ 메인 폰트 색상을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>subColor</name>
+                <label>
+                    <![CDATA[ 서브색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#E5E5E5</default>
+                <description>
+                    <![CDATA[ 서브 색상을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>subHeaderColor</name>
+                <label>
+                    <![CDATA[ 서브헤더색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#FFF</default>
+                <description>
+                    <![CDATA[ 서브 헤더 색상을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>mouseHoverColor</name>
+                <label>
+                    <![CDATA[ 마우스오버색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#FF5544</default>
+                <description>
+                    <![CDATA[ 마우스를 올렸을 때 색상을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-badge-color</name>
+                <label>
+                    <![CDATA[ 뱃지 글씨 색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#FFF</default>
+                <description>
+                    <![CDATA[ 뱃지 글씨 색상을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>footerLinkColor</name>
+                <label>
+                    <![CDATA[ 푸터링크색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#FF0</default>
+                <description>
+                    <![CDATA[ 푸터 영역 링크 색상을 선택합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-indicator-color</name>
+                <label>
+                    <![CDATA[ 인디케이터바 색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#FF5544</default>
+                <description>
+                    <![CDATA[ 인디케이터바 색상을 설정합니다. ]]>
+                </description>
+            </variable>
+        </variablegroup>
+        <variablegroup name="친효애드온 : TOC목차 설정">
+            <variable>
+                <name>rgy-article-toc-hovercolor</name>
+                <label>
+                    <![CDATA[ TOC 테마색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#FF5544</default>
+                <description>
+                    <![CDATA[ TOC 목차의 테마 색상을 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-article-toc-color</name>
+                <label>
+                    <![CDATA[ TOC 글자색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#777</default>
+                <description>
+                    <![CDATA[ TOC 목차의 글자 색상을 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-article-toc-bgcolor</name>
+                <label>
+                    <![CDATA[ TOC 배경색상 ]]>
+                </label>
+                <type>COLOR</type>
+                <option />
+                <default>#E5E5E5</default>
+                <description>
+                    <![CDATA[ TOC 목차의 배경 색상을 설정합니다. ]]>
+                </description>
+            </variable>
+        </variablegroup>
+        <variablegroup name="친효애드온 : 디데이 모듈 설정">
+            <variable>
+                <name>rgy-dday1</name>
+                <label>
+                    <![CDATA[ 디데이 (~일째) ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 디데이(~일째)를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-dday-keyword1</name>
+                <label>
+                    <![CDATA[ 주제 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 디데이(~일째)의 주제를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-ddaying-year</name>
+                <label>
+                    <![CDATA[ 년 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 디데이(~일째)의 연도를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-ddaying-month</name>
+                <label>
+                    <![CDATA[ 월 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 디데이(~일째)의 월을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-ddaying-day</name>
+                <label>
+                    <![CDATA[ 일 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 디데이(~일째)의 일을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-dday2</name>
+                <label>
+                    <![CDATA[ 디데이 (~일 남음) ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 디데이(~일 남음)를 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-dday-keyword2</name>
+                <label>
+                    <![CDATA[ 주제 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 디데이(~일 남음)의 주제를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-ddaycount-year</name>
+                <label>
+                    <![CDATA[ 년 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 디데이(~일 남음)의 연도를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-ddaycount-month</name>
+                <label>
+                    <![CDATA[ 월 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 디데이(~일 남음)의 월을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-ddaycount-day</name>
+                <label>
+                    <![CDATA[ 일 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 디데이(~일 남음)의 일을 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-thedday</name>
+                <label>
+                    <![CDATA[ 디데이완료 텍스트 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>디데이가 되었습니다!</default>
+                <description>
+                    <![CDATA[ 디데이(~일 남음)의 당일이 되면 출력되는 텍스트를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-dday2-link</name>
+                <label>
+                    <![CDATA[ 디데이완료 링크버튼 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 디데이(~일 남음) 완료 시 링크 가능한 버튼을 ON / OFF 합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-dday2-link-url</name>
+                <label>
+                    <![CDATA[ 디데이링크 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>https://</default>
+                <description>
+                    <![CDATA[ 디데이(~일 남음) 완료 시 링크가 가능한 URL 주소를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgy-dday2-link-text</name>
+                <label>
+                    <![CDATA[ 디데이링크 텍스트 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 디데이(~일 남음) 완료 시 링크가 가능한 버튼의 텍스트를 입력합니다. ]]>
+                </description>
+            </variable>
+        </variablegroup>
+        <variablegroup name="친효애드온 : 스트리밍 모듈 설정">
+            <variable>
+                <name>rgy-sidebar-live-element</name>
+                <label>
+                    <![CDATA[ 스트리밍 모듈 설정 ]]>
+                </label>
+                <type>SELECT</type>
+                <option>
+                    <![CDATA[[{"name":"rgy-sidebar-live-off","label":"방송종료","value":"rgy-sidebar-live-off"},{"name":"rgy-sidebar-live-on","label":"방송중","value":"rgy-sidebar-live-on"}]]]>
+                </option>
+                <default>rgy-sidebar-live-off</default>
+                <description>
+                    <![CDATA[ 스트리밍 모듈의 방송중/방송종료 상태를 설정합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgylive-title</name>
+                <label>
+                    <![CDATA[ 모듈 타이틀 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default></default>
+                <description>
+                    <![CDATA[ 스트리밍 모듈의 타이틀을 설정합니다. 기본값은 "스트리밍" 입니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgylive-url</name>
+                <label>
+                    <![CDATA[ 스트리밍 URL ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>https://</default>
+                <description>
+                    <![CDATA[ 스트리밍 URL 주소를 입력합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgylive-icon-youtube</name>
+                <label>
+                    <![CDATA[ 유튜브 스트리밍 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>false</default>
+                <description>
+                    <![CDATA[ 유튜브에서 방송중임을 표시합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgylive-icon-twitch</name>
+                <label>
+                    <![CDATA[ 트위치 스트리밍 ]]>
+                </label>
+                <type>BOOL</type>
+                <option />
+                <default>true</default>
+                <description>
+                    <![CDATA[ 트위치에서 방송중임을 표시합니다. ]]>
+                </description>
+            </variable>
+            <variable>
+                <name>rgylive-text</name>
+                <label>
+                    <![CDATA[ 방송 제목 ]]>
+                </label>
+                <type>STRING</type>
+                <option />
+                <default>입력</default>
+                <description>
+                    <![CDATA[ 방송 제목을 입력합니다. ]]>
+                </description>
+            </variable>
+        </variablegroup>
+    </variables>
+</skin>

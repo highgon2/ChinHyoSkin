@@ -1,0 +1,2205 @@
+<!doctype html>
+<html lang="ko">
+<!--
+    친효스킨 Ver 2.4
+    제작자 : 친절한효자손
+    블로그 : https://rgy0409.tistory.com
+    e-mail : rgy0409@gmail.com
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="<s_if_var_rgy-blogger-name>[##_var_rgy-blogger-name_##]</s_if_var_rgy-blogger-name><s_not_var_rgy-blogger-name>[##_blogger_##]</s_not_var_rgy-blogger-name>">
+    <meta name="description" content="[##_desc_##]">
+    <!-- 아래의 메타태그는 스킨제작자 표시 입니다. 편집을 금지합니다. -->
+    <meta name="generator" content="친절한효자손">
+    <!-- 위의 메타태그는 스킨제작자 표시 입니다. 편집을 금지합니다. -->
+    <title>[##_page_title_##]</title>
+    <link rel="alternate" type="application/rss+xml" title="[##_title_##]" href="[##_rss_url_##]">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./images/jquery_1.12.3.js"></script>
+    <script src="./images/script.js"></script>
+    <!-- TOC 스크립트 -->
+    <script src="./images/jquery.toc.min.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="./images/html5shiv-3.7.3.min.js"></script>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- 구글 애드센스 승인 코드 -->
+    <script data-ad-client="[##_var_rgy-adss-client_##]" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <script>
+        var chIfdCId = '[##_var_rgy-adss-client_##]';
+        var chWidebarStart = 0;
+        var chCoverWidebarNum = '[##_var_rgy-cover-widebar-adss-count_##]';
+        var chCoverWidebarSlot = '[##_var_rgy-cover-widebar-adss-slot_##]';
+        var chIfdStart = 0;
+        var chCoverListIfdNum = '[##_var_rgy-cover-list-infeed-adss-count_##]';
+        var chCoverListIfdLKey = '[##_var_rgy-cover-list-infeed-adss-layoutkey_##]';
+        var chCoverListIfdSlot = '[##_var_rgy-cover-list-infeed-adss-slot_##]';
+
+    </script>
+
+    <!-- 인디케이터 : Indicator (Progress Bar) -->
+    <script src="https://rawcdn.githack.com/mburakerman/prognroll/0feda211643153bce2c69de32ea1b39cdc64ffbe/src/prognroll.js"></script>
+    <script>
+        $(function() {
+            $("body").prognroll({
+                height: 5,
+                color: "[##_var_rgy-indicator-color_##]"
+            });
+            $(".content").prognroll({
+                custom: true
+            });
+        });
+
+    </script>
+
+    <script>
+        $(document).ready(function() {
+
+            /* TOP 버튼 */
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) {
+                    $('#topBtn').fadeIn();
+                } else {
+                    $('#topBtn').fadeOut();
+                }
+            });
+
+            $(".rgyTop").click(function() {
+                $('html, body').animate({
+                    scrollTop: 0
+                }, 500);
+                return false;
+            });
+
+            /* 모바일 슬라이드 버튼 */
+            $(".mobile-btn").click(function() {
+                $(".menu").stop().slideToggle(400, function() {
+                    if ($(".menu").css('display') == 'none') {
+                        $("#topEmpty").css('height', 0);
+                    } else {
+                        $("#topEmpty").css('height', ($("#topEmpty").height() + $(".menu").eq(0).height()));
+                    }
+                });
+            });
+
+            /* 카테고리 NEW 아이콘 변경 */
+            $('img[alt="N"]').each(function() {
+                $(this).replaceWith('<span class="rgy-category-new">N</span>');
+            });
+            $('.rgyList-title a img').each(function() {
+                $(this).replaceWith('<span class="rgy-category-new">N</span>');
+            });
+
+            /* 카테고리 글 수 괄호 제거 */
+            $("#sidebar .c_cnt").each(function() {
+                var e = $(this).text();
+                e = e.replace("(", "");
+                e = e.replace(")", "");
+                $(this).text(e);
+                if (e == "") {
+                    $(this).hide();
+                }
+            });
+
+            /* a href='#' 클릭 무시 스크립트 */
+            $('a[href="#"]').click(function(ignore) {
+                ignore.preventDefault();
+            });
+
+            /* 사이드바 이미지배너 모듈 새창띄우기 스크립트 */
+            $(".module_plugin a").attr({
+                "target": "_blank"
+            });
+
+            /* 친효애드온 본문 링크 a태그 클래스 제거 */
+            $(".rgyPostIt>p>a").removeClass("tx-link");
+
+            /* 본문 data-ke-size 속성 제거 */
+            $(".article h1, .article h2, .article h3, .article h4, .article p").removeAttr("data-ke-size");
+
+        });
+
+    </script>
+
+    <!-- 유튜브 반응형 스크립트 -->
+    <script>
+        $(window).resize(function() {
+            resizeYoutube();
+        });
+        $(function() {
+            resizeYoutube();
+        });
+
+        function resizeYoutube() {
+            $("iframe").each(function() {
+                if (/^https?:\/\/www.youtube.com\/embed\//g.test($(this).attr("src"))) {
+                    $(this).css("width", "100%");
+                    $(this).css("height", Math.ceil(parseInt($(this).css("width")) * 480 / 854) + "px");
+                }
+            });
+        }
+
+    </script>
+
+    <!-- 카카오톡 공유 스크립트 -->
+    <script>
+        function ShareKakaoTalk() {
+            Kakao.Link.sendScrap({
+                requestUrl: location.href
+            });
+        };
+
+    </script>
+
+    <!-- 디데이 스크립트 -->
+    <script>
+        function ddaying() {
+            var today = new Date();
+            var dday = new Date("[##_var_rgy-ddaying-year_##], [##_var_rgy-ddaying-month_##], [##_var_rgy-ddaying-day_##]");
+            var toGo = dday.getTime() - today.getTime();
+            var daysGone = Math.abs(Math.floor(toGo / (1000 * 60 * 60 * 24)));
+            document.write(daysGone);
+        }
+
+        function ddayCount() {
+            var today = new Date();
+            var dday = new Date("[##_var_rgy-ddaycount-year_##], [##_var_rgy-ddaycount-month_##], [##_var_rgy-ddaycount-day_##]");
+            var theDay = Math.floor((dday.getTime() - today.getTime()) / 86400000) + 1;
+            if (theDay <= 0) {
+                $("#dDay>.dday2").remove();
+                $("#dDay").append('<li><span style="margin-left: 5px;">[##_var_rgy-thedday_##]</span><s_if_var_rgy-dday2-link><a class="ddayLink" href="[##_var_rgy-dday2-link-url_##]" target="_blink"><s_if_var_rgy-dday2-link-text>[##_var_rgy-dday2-link-text_##]</s_if_var_rgy-dday2-link-text><s_not_var_rgy-dday2-link-text><i class="fas fa-link"></i></s_not_var_rgy-dday2-link-text></a></s_if_var_rgy-dday2-link></li>');
+            } else {
+                document.write(theDay)
+            }
+        }
+
+    </script>
+
+    <!-- 커스텀 단축키 -->
+    <script type="text/javascript">
+        var key = new Array();
+        key['w'] = "/manage/newpost";
+        key['e'] = "/";
+
+        function getKey(keyStroke) {
+            if ((event.srcElement.tagName != 'INPUT') && (event.srcElement.tagName != 'TEXTAREA')) {
+                isNetscape = (document.layers);
+                eventChooser = (isNetscape) ? keyStroke.which : event.keyCode;
+                which = String.fromCharCode(eventChooser).toLowerCase();
+                for (var i in key)
+                    if (which == i) window.location = key[i];
+            }
+        }
+        document.onkeypress = getKey;
+
+    </script>
+
+    <style>
+        <s_if_var_mainColor>div[data-ke-type='moreLess'] .btn-toggle-moreless,
+        #tt-body-page div[data-ke-type='moreLess'] .btn-toggle-moreless,
+        .article figure.fileblock a,
+        .article figure.fileblock a div.desc div.size,
+        #topBtn ul li,
+        #topBtn ul li>div .topBtn-exp1,
+        #contents .paging-wrap .paging .numbox .num .selected,
+        header,
+        header .menu,
+        #contents .article button.btn_more,
+        #contents .article p>span.imageblock>a,
+        #contents .area_related .list_related li a.link_related .link-more,
+        #contents .comment .commentWrite .reBtn,
+        .rgy-guest-info,
+        #contents .guest .guestWrite .guestBtn,
+        #contents .guestList .rgy-rewrite-window .re-control .re-btn a,
+        #sidebar aside .rgy-sidebar-title>h3,
+        .counter li .today-count,
+        .rgy-cover-list-wrap>h1,
+        .rgy-cover-grid-wrap>h1,
+        .rgy-cover-gallery-wrap>h1,
+        .rgy-cover-gallery2-wrap>h1,
+        footer #footer {
+            background-color: [##_var_mainColor_##] !important;
+        }
+
+        #contents .paging-wrap .paging>a,
+        #contents .paging-wrap .paging .numbox .num,
+        header .menu .button a:hover,
+        #contents .commentList .rgy-rewrite-window .rgy-rewrite-window-right .rgy-rewrite-window-right-top .re-btn a,
+        #sidebar aside .blogInfo li.blogInfo-sns>p>a {
+            color: [##_var_mainColor_##] !important;
+        }
+
+        .index-list-content,
+        .rgy-cover-list-wrap .rgy-cover-list-wrap-inner,
+        .rgy-cover-grid-wrap .rgy-cover-grid-wrap-inner,
+        .rgy-cover-gallery-wrap .rgy-cover-gallery-wrap-inner,
+        .rgy-cover-gallery2-wrap .rgy-cover-gallery2-wrap-inner,
+        #contents textarea,
+        #contents .area_related .list_related li a.link_related,
+        #contents .guest .guestWrite .guest3-options div input,
+        #sidebar aside .rgy-sidebar-title {
+            border-color: [##_var_mainColor_##] !important;
+        }
+
+        .index-list-content .rgy-index-more,
+        .rgy-cover-list-wrap .rgy-cover-more,
+        .rgy-cover-grid-wrap .rgy-cover-more,
+        .rgy-cover-gallery-wrap .rgy-cover-more,
+        .rgy-cover-gallery2-wrap .rgy-cover-more,
+        div[data-ke-type='moreLess'] .btn-toggle-moreless::after,
+        #tt-body-page div[data-ke-type='moreLess'] .btn-toggle-moreless::after {
+            border-bottom-color: [##_var_mainColor_##] !important;
+        }
+
+        #contents .commentList .rgy-rewrite-window2 .rgy-div-re-icon,
+        #contents .guestList .rgy-rewrite-window2 .rgy-div-re-icon,
+        #topBtn ul li>div .topBtn-exp2 {
+            border-left-color: [##_var_mainColor_##] !important;
+        }
+
+        @media (min-width:768px) {
+            .index-list-content .rgy-index-more {
+                border-bottom-color: [##_var_mainColor_##] !important;
+            }
+        }
+
+        </s_if_var_mainColor><s_if_var_mainFontColor>header .blog-title a,
+        header .mobile-category a,
+        header .mobile-btn,
+        header .menu .search i,
+        header .menu .button a,
+        .rgy-cover-gallery-wrap>h1,
+        .rgy-cover-gallery2-wrap>h1,
+        .rgy-cover-grid-wrap>h1,
+        .rgy-cover-list-wrap>h1,
+        .rgy-cover-more i,
+        #contents .area_related .list_related li a.link_related .link-more,
+        #contents .paging-wrap .paging .numbox .num .selected,
+        .rgy-sidebar-title>h3,
+        #contents .comment .commentWrite .reBtn,
+        #contents .guestList .rgy-rewrite-window .re-control .re-btn a,
+        #contents .guestList .rgy-rewrite-window2 .rgy-div-re-icon i,
+        footer #footer,
+        .rgy-topbtnmobilehide-on #topBtn ul li a,
+        .rgy-topbtnmobilehide-off #topBtn ul li a,
+        .rgy-topbtnmobilehide-mleft #topBtn ul li a,
+        .rgy-topbtnmobilehide-on #topBtn ul li>div .topBtn-exp1,
+        .rgy-topbtnmobilehide-off #topBtn ul li>div .topBtn-exp1,
+        .rgy-topbtnmobilehide-mleft #topBtn ul li>div .topBtn-exp1 {
+            color: [##_var_mainFontColor_##] !important;
+        }
+
+        header .menu .button a:hover {
+            background-color: [##_var_mainFontColor_##] !important;
+        }
+
+        </s_if_var_mainFontColor><s_if_var_subColor>#contents .article,
+        #contents .tagTrail,
+        #contents .rgyShare,
+        #contents .comment,
+        #contents .area_related,
+        #contents .guest,
+        #contents .guestList .rgy-rewrite-window {
+            border-color: [##_var_subColor_##] !important;
+        }
+
+        #contents .titleWrap .into_titlewrap .admin,
+        #sidebar aside .aside_category .tt_category .category_list .link_item,
+        #sidebar aside .blogInfo li:not(:first-child),
+        #contents .commentList {
+            border-top-color: [##_var_subColor_##] !important;
+        }
+
+        #contents .searchList,
+        #contents .titleWrap h1,
+        #sidebar aside .calendar .calendar-inner .tt-calendar thead tr th.cal_week1,
+        #sidebar aside .calendar .calendar-inner .tt-calendar thead tr th.cal_week2 {
+            border-top-color: [##_var_subColor_##] !important;
+            border-bottom-color: [##_var_subColor_##] !important;
+        }
+
+        #contents .rgyShare h3,
+        #contents .area_related .tit_related,
+        #contents .comment .comment-h3 h3 {
+            border-bottom-color: [##_var_subColor_##] !important;
+        }
+
+        .rgy-cover-list-wrap .rgy-cover-list-wrap-inner .rgy-cover-list-wrap-inner-left .thumnailWrap,
+        .rgy-cover-grid-wrap .rgy-cover-grid-wrap-inner .rgy-cover-grid-wrap-inner-left .thumnailWrap,
+        .rgy-cover-gallery-wrap .rgy-cover-gallery-wrap-inner .thumnailWrap,
+        .rgy-cover-gallery2-wrap .rgy-cover-gallery2-wrap-inner .thumnailWrap,
+        #contents .area_related .list_related li a.link_related span.thumb_related .thumb-related-img {
+            outline-color: [##_var_subColor_##] !important;
+        }
+
+        </s_if_var_subColor><s_if_var_subHeaderColor>header,
+        header .menu,
+        header .menu .search {
+            border-bottom-color: [##_var_subHeaderColor_##] !important;
+        }
+
+        header .menu .search input {
+            border-color: [##_var_subHeaderColor_##] !important;
+        }
+
+        </s_if_var_subHeaderColor><s_if_var_mouseHoverColor>div[data-ke-type='moreLess'] .btn-toggle-moreless:hover,
+        #tt-body-page div[data-ke-type='moreLess'] .btn-toggle-moreless:hover,
+        .article figure.fileblock a:hover,
+        .article figure.fileblock a:hover div.desc div.size,
+        #topBtn ul li:hover,
+        .rgyBadge,
+        .rgy-category-new,
+        .aside_category .tt_category a:hover .c_cnt,
+        .archive li a:hover .archive-count,
+        #dDay>li .ddayColor,
+        #dDay>li .ddayLink,
+        #contents .article button.btn_more:hover,
+        #contents .article div.moreless_content button.btn_less:hover,
+        #contents .article p>span.imageblock>a:hover,
+        #contents .area_related .list_related li a.link_related:hover .link-more,
+        #contents .re-count span.addcomment>a span.cnt,
+        #contents .comment .commentWrite .reBtn:hover,
+        #contents .commentList .rgy-rewrite-window .re-control .re-btn a:hover,
+        #contents .commentList .tt_more_preview_comments_wrap .tt_more_preview_comments_text:hover,
+        #contents .guest .guestWrite .guestBtn:hover,
+        #contents .guestList .rgy-rewrite-window .re-control .re-btn a:hover {
+            background-color: [##_var_mouseHoverColor_##] !important;
+        }
+
+        #contents .article p>a:hover,
+        #contents .article p>a:hover::before,
+        #contents .article li a:hover,
+        #contents .article li a:hover::after,
+        #contents .rgyList li.rgyList-Li .rgyList-title span.cnt,
+        #contents .article .tx-link:hover,
+        #contents .article table a:hover,
+        #contents .commentList .rgy-rewrite-window .rgy-rewrite-window-right .rgy-rewrite-window-right-top .re-btn a:hover,
+        #sidebar aside .rgy-sidebar-content li a:hover,
+        #sidebar aside .rgy-sidebar-content-recommend li a:hover,
+        #sidebar aside .blogInfo li.blogInfo-sns>p>a:hover,
+        #sidebar aside .tagbox li a:hover,
+        #sidebar aside .aside_category .tt_category a:hover {
+            color: [##_var_mouseHoverColor_##] !important;
+        }
+
+        #sidebar aside .rgy-sidebar-content #dDay>li a.ddayLink:hover {
+            color: #fff !important;
+        }
+
+        .index-list-content:hover .rgy-index-more,
+        .rgy-cover-list-wrap .rgy-cover-list-wrap-inner:hover .rgy-cover-more,
+        .rgy-cover-grid-wrap .rgy-cover-grid-wrap-inner:hover .rgy-cover-more,
+        .rgy-cover-gallery-wrap .rgy-cover-gallery-wrap-inner:hover .rgy-cover-more,
+        .rgy-cover-gallery2-wrap .rgy-cover-gallery2-wrap-inner:hover .rgy-cover-more {
+            border-bottom-color: [##_var_mouseHoverColor_##] !important;
+        }
+
+        .index-list-content:hover,
+        div[data-ke-type='moreLess'] .btn-toggle-moreless:hover::after,
+        #tt-body-page div[data-ke-type='moreLess'] .btn-toggle-moreless:hover::after,
+        .rgy-cover-list-wrap .rgy-cover-list-wrap-inner:hover,
+        .rgy-cover-grid-wrap .rgy-cover-grid-wrap-inner:hover,
+        .rgy-cover-gallery-wrap .rgy-cover-gallery-wrap-inner:hover,
+        .rgy-cover-gallery2-wrap .rgy-cover-gallery2-wrap-inner:hover,
+        #contents .area_related .list_related li a.link_related:hover {
+            border-color: [##_var_mouseHoverColor_##] !important;
+        }
+
+        #contents .article .tx-quote-tistory p a:hover {
+            color: [##_var_mouseHoverColor_##] !important;
+            border-bottom-color: [##_var_mouseHoverColor_##] !important;
+        }
+
+        </s_if_var_mouseHoverColor><s_if_var_articleLinkColor>.article p>a,
+        .article p>a::before,
+        #contents .article .tx-link,
+        #contents .article table a,
+        #contents .article .tx-quote-tistory p a {
+            color: [##_var_articleLinkColor_##] !important;
+        }
+
+        </s_if_var_articleLinkColor><s_if_var_articleListColor>#contents .article li {
+            color: [##_var_articleListColor_##] !important;
+        }
+
+        </s_if_var_articleListColor><s_if_var_articleListLinkColor>#contents .article li a {
+            color: [##_var_articleListLinkColor_##] !important;
+        }
+
+        </s_if_var_articleListLinkColor><s_if_var_rgy-badge-color>.rgyBadge,
+        .rgy-category-new,
+        .aside_category .tt_category a:hover .c_cnt,
+        #contents .re-count span.addcomment>a span.cnt,
+        #dDay>li .ddayColor,
+        #dDay>li .ddayLink {
+            color: [##_var_rgy-badge-color_##] !important;
+        }
+
+        </s_if_var_rgy-badge-color><s_if_var_footerLinkColor>footer #footer>div.footer-inner>p>a {
+            color: [##_var_footerLinkColor_##] !important;
+        }
+
+        </s_if_var_footerLinkColor><s_if_var_borderRadius>.index-list-content,
+        .rgy-cover-list-wrap>h1,
+        .rgy-cover-grid-wrap>h1,
+        .rgy-cover-gallery-wrap>h1,
+        .rgy-cover-gallery2-wrap>h1,
+        .rgy-cover-list-wrap .rgy-cover-list-wrap-inner,
+        .rgy-cover-grid-wrap .rgy-cover-grid-wrap-inner,
+        .rgy-cover-gallery-wrap .rgy-cover-gallery-wrap-inner,
+        .rgy-cover-gallery2-wrap .rgy-cover-gallery2-wrap-inner,
+        #contents .article,
+        #contents .tagTrail,
+        #contents .rgyShare,
+        #contents .area_related,
+        #contents .area_related .list_related li a.link_related,
+        #contents .comment,
+        #contents .comment .commentWrite textarea,
+        #contents .commentList .rgy-reply,
+        #contents .commentList .rgy-rewrite-window,
+        #contents .guest,
+        #contents .guest .guestWrite textarea,
+        #contents .guestList .rgy-rewrite-window,
+        #sidebar aside .rgy-sidebar-title {
+            border-radius: [##_var_borderRadius_##] !important;
+        }
+
+        header {
+            border-radius: 0 0 [##_var_borderRadius_##] [##_var_borderRadius_##] !important;
+        }
+
+        #contents .area_related .list_related li a.link_related .link-more {
+            border-top-left-radius: [##_var_borderRadius_##] !important;
+        }
+
+        footer #footer {
+            border-radius: [##_var_borderRadius_##] [##_var_borderRadius_##] 0 0 !important;
+        }
+
+        </s_if_var_borderRadius><s_if_var_articleFontSizeM>#contents .article {
+            font-size: [##_var_articleFontSizeM_##] !important;
+        }
+
+        </s_if_var_articleFontSizeM><s_if_var_articleFontSizePC>@media (min-width:1200px) {
+            #contents .article {
+                font-size: [##_var_articleFontSizePC_##] !important;
+            }
+        }
+
+        </s_if_var_articleFontSizePC><s_if_var_articleLineHeightM>#contents .article {
+            line-height: [##_var_articleLineHeightM_##] !important;
+        }
+
+        </s_if_var_articleLineHeightM><s_if_var_articleLineHeightPC>@media (min-width:1200px) {
+            #contents .article {
+                line-height: [##_var_articleLineHeightPC_##] !important;
+            }
+        }
+
+        </s_if_var_articleLineHeightPC><s_if_var_articleLetterSpacing>#contents .article {
+            letter-spacing: [##_var_articleLetterSpacing_##] !important;
+        }
+
+        </s_if_var_articleLetterSpacing><s_if_var_articleFirstletterSpacing>#contents .article>section>p::first-letter,
+        #contents .article div.contents_style>p::first-letter,
+        #contents .article div#toc-contents>p::first-letter {
+            margin-left: [##_var_articleFirstletterSpacing_##] !important;
+        }
+
+        </s_if_var_articleFirstletterSpacing><s_if_var_containerWidth>@media (min-width: 1000px) {
+
+            .rgy-sidebar-on #container,
+            .rgy-sidebar-stk #container,
+            .rgy-sidebar-off #container {
+                max-width: [##_var_containerWidth_##] !important;
+            }
+
+            #topAdss,
+            #bottomAdss {
+                max-width: [##_var_containerWidth_##] !important;
+            }
+        }
+
+        </s_if_var_containerWidth><s_if_var_rgyReplyBackgroundColor>#contents .commentList .rgy-reply {
+            background-color: [##_var_rgyReplyBackgroundColor_##] !important;
+        }
+
+        </s_if_var_rgyReplyBackgroundColor><s_if_var_rgyReplyLineColor>#contents .commentList .rgy-reply>li {
+            border-color: [##_var_rgyReplyLineColor_##] !important;
+        }
+
+        </s_if_var_rgyReplyLineColor><s_if_var_replyBGColor>#contents .commentList .rgy-rewrite-window .rgy-rewrite-window-right .rgy-rewrite-window-right-bottom .re-chatwindow {
+            background-color: [##_var_replyBGColor_##] !important;
+        }
+
+        #contents .commentList .rgy-rewrite-window .rgy-rewrite-window-right .rgy-rewrite-window-right-bottom .re-chatwindow i {
+            color: [##_var_replyBGColor_##] !important;
+        }
+
+        </s_if_var_replyBGColor><s_if_var_replyColor>#contents .commentList .rgy-rewrite-window .rgy-rewrite-window-right .rgy-rewrite-window-right-bottom .re-chatwindow {
+            color: [##_var_replyColor_##] !important;
+        }
+
+        </s_if_var_replyColor><s_if_var_replyBGColor2>#contents .commentList .rgy-rewrite-window2 .rgy-rewrite-window2-right .rgy-rewrite-window2-right-bottom .re-chatwindow {
+            background-color: [##_var_replyBGColor2_##] !important;
+        }
+
+        #contents .commentList .rgy-rewrite-window2 .rgy-rewrite-window2-right .rgy-rewrite-window2-right-bottom .re-chatwindow i {
+            color: [##_var_replyBGColor2_##] !important;
+        }
+
+        </s_if_var_replyBGColor2><s_if_var_replyColor2>#contents .commentList .rgy-rewrite-window2 .rgy-rewrite-window2-right .rgy-rewrite-window2-right-bottom .re-chatwindow {
+            color: [##_var_replyColor2_##] !important;
+        }
+
+        </s_if_var_replyColor2><s_if_var_replyIcon>#contents .commentList .re-btn i {
+            color: [##_var_replyIcon_##] !important;
+        }
+
+        </s_if_var_replyIcon><s_if_var_replyName>#contents .commentList .re-name,
+        #contents .commentList .re-name>a {
+            color: [##_var_replyName_##] !important;
+        }
+
+        </s_if_var_replyName><s_if_var_replyDate>#contents .commentList .re-date {
+            color: [##_var_replyDate_##] !important;
+        }
+
+        </s_if_var_replyDate><s_if_var_replyReport>#contents .commentList .re-date>a {
+            color: [##_var_replyReport_##] !important;
+        }
+
+        </s_if_var_replyReport><s_if_var_moreReplyBG>#contents .commentList .tt_more_preview_comments_wrap .tt_more_preview_comments_text {
+            background-color: [##_var_moreReplyBG_##] !important;
+        }
+
+        </s_if_var_moreReplyBG><s_if_var_moreReplyColor>#contents .commentList .tt_more_preview_comments_wrap .tt_more_preview_comments_text {
+            color: [##_var_moreReplyColor_##] !important;
+        }
+
+        </s_if_var_moreReplyColor><s_if_var_topBtnOpacity>#topBtn ul li {
+            opacity: [##_var_topBtnOpacity_##] !important;
+        }
+
+        </s_if_var_topBtnOpacity><s_if_var_topBtnLocation>@media (min-width: 1000px) {
+
+            .rgy-topbtnmobilehide-on #topBtn,
+            .rgy-topbtnmobilehide-off #topBtn,
+            .rgy-topbtnmobilehide-mleft #topBtn {
+                bottom: [##_var_topBtnLocation_##] !important;
+            }
+        }
+
+        </s_if_var_topBtnLocation><s_if_var_rgyCoverGridThumbnailHeight>.rgy-cover-grid-wrap .rgy-cover-grid-wrap-inner .rgy-cover-grid-wrap-inner-left {
+            height: [##_var_rgyCoverGridThumbnailHeight_##] !important;
+        }
+
+        </s_if_var_rgyCoverGridThumbnailHeight><s_if_var_rgyCoverGalleryThumbnailHeight>.rgy-cover-gallery-wrap .rgy-cover-gallery-wrap-inner {
+            height: [##_var_rgyCoverGalleryThumbnailHeight_##] !important;
+        }
+
+        </s_if_var_rgyCoverGalleryThumbnailHeight><s_if_var_rgyCoverGallery2ThumbnailHeight>.rgy-cover-gallery2-wrap .rgy-cover-gallery2-wrap-inner {
+            height: [##_var_rgyCoverGallery2ThumbnailHeight_##] !important;
+        }
+
+        </s_if_var_rgyCoverGallery2ThumbnailHeight><s_if_var_rgyCoverWidebarThumbnailHeight>.rgy-cover-widebar-wrap .rgy-cover-widebar-wrap-inner {
+            height: [##_var_rgyCoverWidebarThumbnailHeight_##] !important;
+        }
+
+        </s_if_var_rgyCoverWidebarThumbnailHeight><s_if_var_rgyArticleReplyFontsize>#contents .commentList .rgy-rewrite-window .rgy-rewrite-window-right .rgy-rewrite-window-right-bottom .re-chatwindow,
+        #contents .commentList .rgy-rewrite-window2 .rgy-rewrite-window2-right .rgy-rewrite-window2-right-bottom .re-chatwindow {
+            font-size: [##_var_rgyArticleReplyFontsize_##] !important;
+        }
+
+        </s_if_var_rgyArticleReplyFontsize><s_if_var_rgyArticleReplyLineheight>#contents .commentList .rgy-rewrite-window .rgy-rewrite-window-right .rgy-rewrite-window-right-bottom .re-chatwindow,
+        #contents .commentList .rgy-rewrite-window2 .rgy-rewrite-window2-right .rgy-rewrite-window2-right-bottom .re-chatwindow {
+            line-height: [##_var_rgyArticleReplyLineheight_##] !important;
+        }
+
+        </s_if_var_rgyArticleReplyLineheight><s_if_var_rgy-loadingimgsize>#loading>.loadingSize {
+            transform: scale([##_var_rgy-loadingimgsize_##]) !important;
+            -webkit-transform: scale([##_var_rgy-loadingimgsize_##]) !important;
+        }
+
+        </s_if_var_rgy-loadingimgsize><s_if_var_rgy-loadingcolor>#loading .loadingAni>div {
+            border-color: [##_var_rgy-loadingcolor_##] transparent [##_var_rgy-loadingcolor_##] transparent !important;
+        }
+
+        #loading .loadingAni>div:nth-child(2) div:before,
+        #loading .loadingAni>div:nth-child(2) div:after {
+            background-color: [##_var_rgy-loadingcolor_##] !important;
+            box-shadow: 0 180px 0 0 [##_var_rgy-loadingcolor_##] !important;
+        }
+
+        #loading .loadingAni>div:nth-child(2) div:after {
+            box-shadow: 180px 0 0 0 [##_var_rgy-loadingcolor_##] !important;
+        }
+
+        </s_if_var_rgy-loadingcolor><s_if_var_rgy-article-table-fontsize>#contents .article table {
+            font-size: [##_var_rgy-article-table-fontsize_##] !important;
+        }
+
+        </s_if_var_rgy-article-table-fontsize>
+
+        /* 친효애드온 */
+        <s_if_var_rgyArticleBoldColor>.rgy-chAddOn-articleBoldOn .article p>b {
+            color: [##_var_rgyArticleBoldColor_##] !important;
+        }
+
+        </s_if_var_rgyArticleBoldColor><s_if_var_rgyArticleBoldBGColor>.rgy-chAddOn-articleBoldOn .article p>b {
+            background-color: [##_var_rgyArticleBoldBGColor_##] !important;
+        }
+
+        </s_if_var_rgyArticleBoldBGColor><s_if_var_rgy-article-toc-color>#contents .article #rgyTOC li a {
+            color: [##_var_rgy-article-toc-color_##] !important;
+        }
+
+        </s_if_var_rgy-article-toc-color><s_if_var_rgy-article-toc-hovercolor>#contents .article .rgyList::after,
+        #contents .article #rgyTOC::after,
+        #contents .article #rgyTOC li a:hover {
+            color: [##_var_rgy-article-toc-hovercolor_##] !important;
+        }
+
+        #contents .article .rgyList>ul,
+        #contents .article #rgyTOC>ul {
+            border-bottom-color: [##_var_rgy-article-toc-hovercolor_##] !important;
+        }
+
+        #contents .article #rgyTOC,
+        #contents .article .rgyList li,
+        #contents .article #rgyTOC li {
+            border-top-color: [##_var_rgy-article-toc-hovercolor_##] !important;
+        }
+
+        </s_if_var_rgy-article-toc-hovercolor><s_if_var_rgy-article-toc-bgcolor>#contents .article .rgyList,
+        #contents .article #rgyTOC {
+            background-color: [##_var_rgy-article-toc-bgcolor_##] !important;
+        }
+
+        </s_if_var_rgy-article-toc-bgcolor>
+
+        /* 다크모드 */
+        <s_if_var_rgy-darkmode>body {
+            background-color: #222 !important;
+        }
+
+        .rgyCoverElement .rgy-cover-gallery-wrap-inner-over,
+        .rgyCoverElement .rgy-cover-gallery2-wrap-inner-over {
+            background-color: rgba(0, 0, 0, 0.8) !important;
+        }
+
+        .rgy-cover-widebar-wrap .rgy-cover-widebar-wrap-inner:hover .thumnailWrap .thumnail {
+            filter: contrast(1.95) brightness(0.1) !important;
+            -webkit-filter: contrast(1.95) brightness(0.1) !important;
+        }
+
+        .rgy-cover-widebar-wrap .rgy-cover-widebar-wrap-inner .rgy-cover-widebar-wrap-inner-over .rgy-cover-widebar-wrap-inner-over-title h1.title,
+        .rgy-cover-widebar-wrap .rgy-cover-widebar-wrap-inner .rgy-cover-widebar-wrap-inner-over .rgy-cover-widebar-wrap-inner-over-summary .summary {
+            color: #eee !important;
+        }
+
+        .rgy-cover-widebar-wrap .rgy-cover-widebar-wrap-inner .rgy-cover-widebar-wrap-inner-over .rgy-cover-widebar-wrap-inner-over-title h1.title::after {
+            background-color: #eee !important;
+        }
+
+        .rgy-cover-widebar-wrap .rgy-cover-widebar-wrap-inner .rgy-cover-widebar-wrap-inner-over .rgy-cover-widebar-wrap-inner-over-category .category,
+        .rgy-cover-widebar-wrap .rgy-cover-widebar-wrap-inner .rgy-cover-widebar-wrap-inner-over .rgy-cover-widebar-wrap-inner-over-date .date,
+        .rgy-cover-widebar-wrap .rgy-cover-widebar-wrap-inner .rgy-cover-widebar-wrap-inner-over .rgy-cover-widebar-wrap-inner-over-url .url {
+            color: #aaa !important;
+        }
+
+        .index-list-content .index-list-content-inner .index-inner-right a.link_post h1.tit_post,
+        .rgyCoverElement h1,
+        .rgy-sidebar-title a,
+        .rgy-sidebar-title .blogInfo-text>p:first-child,
+        .rgy-sidebar-title li.rgy-counter-list::before,
+        .rgy-sidebar-title #dDay>li,
+        .rgy-sidebar-title #dDay>li::before,
+        .titleWrap>h1>a,
+        .rgy-buness-info>h3,
+        .container_postbtn .btn_menu_toolbar .txt_state,
+        .rgy-buness-info>ul>li span,
+        #contents .entryProtected h1 a,
+        #contents .searchList>h3>span,
+        #contents ol.rgyList .rgyList-title>a,
+        #contents .index-list-content .index-inner-right h3,
+        #contents .article>p,
+        #contents .article div.contents_style>p,
+        #contents .article div#toc-contents>p,
+        #contents .area_related .list_related li a.link_related .link-related-right .txt_related,
+        #contents .guest h3,
+        #contents .container_postbtn .btn_post .txt_like,
+        #contents .guestList .rgy-rewrite-window .rgy-rewrite-info .name,
+        #contents .guestList .rgy-rewrite-window .rgy-rewrite-info .name a {
+            color: #ccc !important;
+        }
+
+        .rgy-article-autolink-on figure[data-ke-type='opengraph'] div.og-text p.og-title,
+        .rgy-article-autolink-on #tt-body-page figure[data-ke-type='opengraph'] div.og-text p.og-title,
+        #contents .entryProtected p.entryProtected_btn input.entryProtected_submit,
+        #contents .entryProtected p.entryProtected_btn input.entryProtected_password,
+        #contents .paging-wrap .paging .numbox .num,
+        #contents .rgyShare h3,
+        #contents .area_related .tit_related,
+        #contents .tagTrail,
+        #contents .tagTrail .tagText,
+        #contents .re-count span.addcomment>a>i,
+        #contents .comment .comment-h3 h3,
+        #contents .guestList .rgy-rewrite-window p,
+        #contents .comment .commentWrite .re3-options p input,
+        #contents .guest .guestWrite .guest3-options div input {
+            color: #aaa !important;
+        }
+
+        #sidebar aside .calendar .calendar-inner .tt-calendar tbody tr.cal_week td {
+            color: #555 !important;
+        }
+
+        .rgy-sidebar-title li.rgy-counter-list>span.today,
+        #contents .comment .commentWrite textarea,
+        #contents .guest .guestWrite textarea {
+            color: #fff !important;
+        }
+
+        #contents .article h1,
+        #contents .article h2,
+        #contents .article h3,
+        #contents .article h4 {
+            color: #ccc !important;
+            border-left-color: #ccc !important;
+            border-bottom-color: #ccc !important;
+        }
+
+        .rgy-buness-info,
+        #contents .commentList,
+        #contents .titleWrap .into_titlewrap .admin,
+        #sidebar aside .blogInfo li:not(:first-child),
+        #sidebar aside .aside_category .tt_category .category_list .link_item {
+            border-top-color: #555 !important;
+        }
+
+        #contents .rgyShare h3,
+        #contents .area_related .tit_related,
+        #contents .comment .comment-h3 h3 {
+            border-bottom-color: #555 !important;
+        }
+
+        #contents .entryProtected p.entryProtected_btn input,
+        #contents .comment .commentWrite .re3-options p input,
+        #contents .comment .commentWrite textarea,
+        #contents .guestList .rgy-rewrite-window,
+        #contents .guestList .rgy-rewrite-window2,
+        #contents .guest .guestWrite .guest3-options div input,
+        #contents .guest .guestWrite textarea {
+            background-color: #333 !important;
+        }
+
+        .aside_category .tt_category .c_cnt,
+        .archive li .archive-count,
+        .counter li .rgy-counter {
+            background-color: #555 !important;
+        }
+
+        #contents .article table,
+        #contents .article .tt-sns-wrap ul {
+            filter: invert() !important;
+        }
+
+        #contents .article,
+        #contents .tagTrail,
+        #contents .rgyShare,
+        #contents .comment,
+        #contents .area_related,
+        #contents .guest,
+        #contents .guestList .rgy-rewrite-window {
+            border-color: #555 !important;
+        }
+
+        #sidebar aside .calendar .calendar-inner .tt-calendar thead tr th.cal_week1,
+        #sidebar aside .calendar .calendar-inner .tt-calendar thead tr th.cal_week2 {
+            border-top-color: #555 !important;
+            border-bottom-color: #555 !important;
+        }
+
+        </s_if_var_rgy-darkmode>
+
+        /* 본문상단 애드센스 티스토리앱 */
+        <s_if_var_rgy-top-adsense-app>#contents .article .revenue_unit_wrap:first-child {
+            display: none;
+        }
+
+        @media (max-width: 799px) {
+            .adsense_1 {
+                display: block;
+                width: 100%;
+                height: 280px;
+            }
+        }
+
+        </s_if_var_rgy-top-adsense-app>
+
+    </style>
+</head>
+
+<!-- 바디 시작 -->
+
+<body id="[##_body_id_##]" class="<s_if_var_rgy-sidebar-element>[##_var_rgy-sidebar-element_##]</s_if_var_rgy-sidebar-element> <s_if_var_rgy-topbtnmobilehide-element>[##_var_rgy-topbtnmobilehide-element_##]</s_if_var_rgy-topbtnmobilehide-element>">
+
+    <!-- 스킨 로딩 -->
+    <s_if_var_chskinloading>
+        <script>
+            $(window).on('load', function() {
+                $("#loading").hide();
+            });
+
+        </script>
+
+        <div id="loading">
+            <div class="loadingSize">
+                <div class="loadingSpin">
+                    <div class="loadingAni">
+                        <div></div>
+                        <div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                <img class="rgyLoadingImg" src="<s_if_var_rgy-loadingimg>[##_var_rgy-loadingimg_##]</s_if_var_rgy-loadingimg><s_not_var_rgy-loadingimg>./images/loading.gif</s_not_var_rgy-loadingimg>" alt="loading">
+            </div>
+        </div>
+    </s_if_var_chskinloading>
+
+    <s_t3>
+
+        <!-- 헤더 시작 -->
+        <header>
+            <!--블로그 타이틀 시작-->
+            <div class="blog-title">
+                <h1><a href="[##_blog_link_##]">[##_title_##]</a></h1>
+            </div>
+            <!--블로그 타이틀 끝-->
+
+            <!--모바일 카테고리 버튼 시작-->
+            <div class="mobile-category">
+                <a href="#rgyCategory"><i class="fas fa-sitemap"></i></a>
+            </div>
+            <!--모바일 카테고리 버튼 끝-->
+
+            <!--모바일 메뉴버튼 시작-->
+            <div class="mobile-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="menu">
+                <div class="search">
+                    <s_search>
+                        <input type="text" name="[##_search_name_##]" value="[##_search_text_##]" onkeypress="if (event.keyCode == 13) { [##_search_onclick_submit_##] }">
+                        <input id="submit" class="submit sr-only" value="" type="button" onclick="[##_search_onclick_submit_##]">
+                        <label for="submit"><i class="fas fa-search" title="검색"></i></label>
+                    </s_search>
+                </div>
+                <div class="button">
+                    <nav>
+                        <ul>
+                            <s_if_var_rgy-header-home>
+                                <li><a href="/" title="홈으로"><i class="fas fa-home"></i></a></li>
+                            </s_if_var_rgy-header-home>
+                            <s_if_var_rgy-header-all>
+                                <li><a href="/category" title="전체글"><i class="fas fa-folder-open"></i></a></li>
+                            </s_if_var_rgy-header-all>
+                            <s_if_var_rgy-header-guestbook>
+                                <li><a href="/guestbook" title="방명록"><i class="fas fa-book-reader"></i></a></li>
+                            </s_if_var_rgy-header-guestbook>
+                            <s_if_var_rgy-header-write>
+                                <li><a href="/manage/post" title="글쓰기"><i class="fas fa-pen-nib"></i></a></li>
+                            </s_if_var_rgy-header-write>
+                            <s_if_var_rgy-header-manager>
+                                <li><a href="/manage" title="관리자"><i class="fas fa-cog"></i></a></li>
+                            </s_if_var_rgy-header-manager>
+                            <li><a href="#" class="tab_login" id="tab_login_toggle" onclick="fnLoginToggle();"></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!--모바일 메뉴버튼 끝-->
+        </header>
+        <!-- 헤더 끝 -->
+
+        <!-- 블로그 메뉴 시작 -->
+        <s_if_var_rgy-blogmenu>
+            <div id="blogMenu">
+                <input type="checkbox" id="blogMenuInput" class="sr-only">
+                <label for="blogMenuInput" class="blogMenuBtn"><i class="fas fa-chevron-right"></i></label>
+                [##_blog_menu_##]
+            </div>
+        </s_if_var_rgy-blogmenu>
+        <!-- 블로그 메뉴 끝 -->
+
+        <!-- 최상단 빈공간 시작 -->
+        <div id="topEmpty"></div>
+        <!-- 최상단 빈공간 끝 -->
+
+        <!-- 최상단 애드센스 시작 -->
+        <s_if_var_rgy-top-adss>
+            <div id="topAdss">
+                <ins class="adsbygoogle" style="display:block;" data-ad-client="[##_var_rgy-adss-client_##]" data-ad-slot="[##_var_rgy-top-adss-slot_##]" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+
+                </script>
+            </div>
+        </s_if_var_rgy-top-adss>
+        <!-- 최상단 애드센스 끝 -->
+
+
+        <!-- 콘테이너: 사이드바+본문 시작 -->
+        <div id="container" class="<s_if_var_rgy-containerLC-element>[##_var_rgy-containerLC-element_##]</s_if_var_rgy-containerLC-element> <s_if_var_rgy-sidebar-mobile-element>[##_var_rgy-sidebar-mobile-element_##]</s_if_var_rgy-sidebar-mobile-element>">
+
+            <!-- 콘텐츠 영역 시작 -->
+            <div id="contents" class="<s_if_var_rgy-contentsLR-element>[##_var_rgy-contentsLR-element_##]</s_if_var_rgy-contentsLR-element> <s_if_var_rgy-chAddOn-articleBold>[##_var_rgy-chAddOn-articleBold_##]</s_if_var_rgy-chAddOn-articleBold> <s_if_var_rgy-article-img-border>[##_var_rgy-article-img-border_##]</s_if_var_rgy-article-img-border> <s_if_var_rgy-article-autolink>[##_var_rgy-article-autolink_##]</s_if_var_rgy-article-autolink> <s_if_var_rgy-article-reply>[##_var_rgy-article-reply_##]</s_if_var_rgy-article-reply> <s_if_var_rgy-article-fontfamily>[##_var_rgy-article-fontfamily_##]</s_if_var_rgy-article-fontfamily>">
+
+                <div id="rgyTistoryGoogleADUpper">[##_revenue_list_upper_##]</div>
+
+                <!-- 보호글 시작 -->
+                <s_article_protected>
+                    <div class="entryProtected">
+                        <h1><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h1>
+                        <span class="date">[##_article_rep_date_##]</span>
+                        <p class="entryProtected_txt">보호되어 있는 글입니다. 내용을 보시려면 비밀번호를 입력하세요.</p>
+                        <p class="entryProtected_btn">
+                            <label for="[##_article_password_##]">비밀번호 :</label>
+                            <input type="password" maxlength="16" id="[##_article_password_##]" name="[##_article_password_##]" value="" onkeydown="if (event.keyCode == 13)[##_article_dissolve_##]" class="entryProtected_password">
+                            <input type="button" value="입력" onclick="[##_article_dissolve_##]" class="entryProtected_submit">
+                        </p>
+                    </div>
+                </s_article_protected>
+                <!-- 보호글 끝 -->
+
+                <!-- 검색결과 + 리스트(목록만) 시작 -->
+                <s_list>
+                    <div class="searchList [##_list_style_##]">
+                        <h3><span class="search-kwd">[##_list_conform_##]</span> : <span class="search-cnt">「[##_list_count_##]」</span>건</h3>
+                    </div>
+                    <ol class="rgyList">
+                        <s_list_rep>
+                            <li class="rgyList-Li">
+                                <s_list_rep_thumbnail>
+                                    <div class="rgyList-thumnail" style="background-image: url('[##_list_rep_thumbnail_##]')"></div>
+                                </s_list_rep_thumbnail>
+                                <div class="rgyList-title">
+                                    <a href="[##_list_rep_link_##]">[##_list_rep_title_##]</a>
+                                    <span class="cnt">[##_list_rep_rp_cnt_##]</span>
+                                </div>
+                                <div class="rgyList-info">
+                                    <span class="date">[##_list_rep_regdate_##]</span>
+                                </div>
+                            </li>
+                        </s_list_rep>
+                    </ol>
+                </s_list>
+                <!-- 검색결과 + 리스트 끝 -->
+
+                <!-- 공지글 시작 -->
+                <s_notice_rep>
+                    <div class="entryNotice">
+                        <div class="titleWrap">
+                            <h1><a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a></h1>
+                            <span class="date"> [##_notice_rep_date_##]</span>
+                        </div>
+                        <div class="article">
+                            [##_notice_rep_desc_##]
+                        </div>
+                    </div>
+                </s_notice_rep>
+                <!-- 공지글 끝 -->
+
+                <!-- 커버 시작 -->
+                <s_cover_group>
+                    <s_cover_rep>
+                        <!-- 와이드바 커버 -->
+                        <s_cover name="rgy-cover-widebar">
+                            <div class="rgy-cover-widebar-wrap rgyCoverElement2">
+                                <h1><i class="fas fa-caret-down"></i>[##_cover_title_##]</h1>
+                                <div class="rgy-cover-widebar-flex">
+                                    <s_cover_item>
+                                        <div class="rgy-cover-widebar-wrap-inner" onclick="location.href='[##_cover_item_url_##]';" style="background-image: url(<s_if_var_rgy-thumbnail>[##_var_rgy-thumbnail_##]</s_if_var_rgy-thumbnail><s_not_var_rgy-thumbnail>./images/ch.gif</s_not_var_rgy-thumbnail>);">
+                                            <s_cover_item_thumbnail>
+                                                <div class="thumnailWrap">
+                                                    <div class="thumnail" style="background-image: url('[##_cover_item_thumbnail_##]');"></div>
+                                                </div>
+                                            </s_cover_item_thumbnail>
+                                            <div class="rgy-cover-widebar-wrap-inner-over">
+                                                <div class="rgy-cover-widebar-wrap-inner-over-title">
+                                                    <h1 class="title">[##_cover_item_title_##]</h1>
+                                                </div>
+                                                <div class="rgy-cover-widebar-wrap-inner-over-summary">
+                                                    <div class="summary">[##_cover_item_summary_##]</div>
+                                                </div>
+                                                <s_cover_item_article_info>
+                                                    <div class="rgy-cover-widebar-wrap-inner-over-category">
+                                                        <div class="category"><i class="fas fa-network-wired"></i>[##_cover_item_category_##]</div>
+                                                    </div>
+                                                    <div class="rgy-cover-widebar-wrap-inner-over-date">
+                                                        <div class="date"><i class="far fa-calendar"></i>[##_cover_item_simple_date_##]</div>
+                                                    </div>
+                                                </s_cover_item_article_info>
+                                                <s_cover_item_not_article_info>
+                                                    <div class="rgy-cover-widebar-wrap-inner-over-summary">
+                                                        <div class="summary">[##_cover_item_summary_##]</div>
+                                                    </div>
+                                                    <div class="rgy-cover-widebar-wrap-inner-over-url">
+                                                        <div class="url"><i class="fas fa-link"></i>[##_cover_item_url_##]</div>
+                                                    </div>
+                                                </s_cover_item_not_article_info>
+                                            </div>
+                                            <s_if_var_rgy-main-tryangle>
+                                                <div class="rgy-cover-more">
+                                                    <i class="fa fa-reply fa-rotate-180"></i>
+                                                </div>
+                                            </s_if_var_rgy-main-tryangle>
+                                        </div>
+                                        <s_if_var_rgy-cover-widebar-adss-onoff>
+                                            <div class="rgy-cover-widebar-adsense">
+                                                <script>
+                                                    chWidebarStart++;
+                                                    if (chWidebarStart % chCoverWidebarNum == 0) {
+                                                        document.write('<ins class="adsbygoogle" style="display:block;" data-ad-format="auto" data-full-width-responsive="true" data-ad-client="' + chIfdCId + '" data-ad-slot="' + chCoverWidebarSlot + '"><\/ins>');
+                                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                                    }
+
+                                                </script>
+                                            </div>
+                                        </s_if_var_rgy-cover-widebar-adss-onoff>
+                                    </s_cover_item>
+                                </div>
+                            </div>
+                        </s_cover>
+
+                        <!-- 갤러리 커버 -->
+                        <s_cover name="rgy-cover-gallery">
+                            <div class="rgy-cover-gallery-wrap rgyCoverElement">
+                                <h1><i class="fas fa-caret-down"></i>[##_cover_title_##]</h1>
+                                <div class="rgy-cover-gallery-flex">
+                                    <s_cover_item>
+                                        <div class="rgy-cover-gallery-wrap-inner" onclick="location.href='[##_cover_item_url_##]';" style="background-image: url(<s_if_var_rgy-thumbnail>[##_var_rgy-thumbnail_##]</s_if_var_rgy-thumbnail><s_not_var_rgy-thumbnail>./images/ch.gif</s_not_var_rgy-thumbnail>);">
+                                            <s_cover_item_thumbnail>
+                                                <div class="thumnailWrap">
+                                                    <div class="thumnail" style="background-image: url('[##_cover_item_thumbnail_##]');"></div>
+                                                </div>
+                                            </s_cover_item_thumbnail>
+                                            <div class="rgy-cover-gallery-wrap-inner-over">
+                                                <div class="rgy-cover-gallery-wrap-inner-over-top">
+                                                    <h1 class="title">[##_cover_item_title_##]</h1>
+                                                </div>
+                                                <div class="rgy-cover-gallery-wrap-inner-over-bottom">
+                                                    <s_cover_item_article_info>
+                                                        <div class="category"><i class="fas fa-network-wired"></i>[##_cover_item_category_##]</div>
+                                                        <div class="date"><i class="far fa-calendar"></i>[##_cover_item_simple_date_##]</div>
+                                                    </s_cover_item_article_info>
+                                                    <s_cover_item_not_article_info>
+                                                        <div class="summary">[##_cover_item_summary_##]</div>
+                                                        <div class="url"><i class="fas fa-link"></i>[##_cover_item_url_##]</div>
+                                                    </s_cover_item_not_article_info>
+                                                </div>
+                                            </div>
+                                            <s_if_var_rgy-main-tryangle>
+                                                <div class="rgy-cover-more">
+                                                    <i class="fa fa-reply fa-rotate-180"></i>
+                                                </div>
+                                            </s_if_var_rgy-main-tryangle>
+                                        </div>
+                                    </s_cover_item>
+                                </div>
+                            </div>
+                        </s_cover>
+
+                        <!-- 갤러리2 커버 -->
+                        <s_cover name="rgy-cover-gallery2">
+                            <div class="rgy-cover-gallery2-wrap rgyCoverElement">
+                                <h1><i class="fas fa-caret-down"></i>[##_cover_title_##]</h1>
+                                <div class="rgy-cover-gallery2-flex">
+                                    <s_cover_item>
+                                        <div class="rgy-cover-gallery2-wrap-inner" onclick="location.href='[##_cover_item_url_##]';" style="background-image: url(<s_if_var_rgy-thumbnail>[##_var_rgy-thumbnail_##]</s_if_var_rgy-thumbnail><s_not_var_rgy-thumbnail>./images/ch.gif</s_not_var_rgy-thumbnail>);">
+                                            <s_cover_item_thumbnail>
+                                                <div class="thumnailWrap">
+                                                    <div class="thumnail" style="background-image: url('[##_cover_item_thumbnail_##]');"></div>
+                                                </div>
+                                            </s_cover_item_thumbnail>
+                                            <div class="rgy-cover-gallery2-wrap-inner-over">
+                                                <div class="rgy-cover-gallery2-wrap-inner-over-title">
+                                                    <div class="rgy-cover-gallery2-wrap-inner-over-top">
+                                                        <h1 class="title">[##_cover_item_title_##]</h1>
+                                                    </div>
+                                                    <div class="rgy-cover-gallery2-wrap-inner-over-bottom">
+                                                        <s_cover_item_article_info>
+                                                            <div class="category"><i class="fas fa-network-wired"></i>[##_cover_item_category_##]</div>
+                                                            <div class="date"><i class="far fa-calendar"></i>[##_cover_item_simple_date_##]</div>
+                                                        </s_cover_item_article_info>
+                                                        <s_cover_item_not_article_info>
+                                                            <div class="summary">[##_cover_item_summary_##]</div>
+                                                            <div class="url"><i class="fas fa-link"></i>[##_cover_item_url_##]</div>
+                                                        </s_cover_item_not_article_info>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <s_if_var_rgy-main-tryangle>
+                                                <div class="rgy-cover-more">
+                                                    <i class="fa fa-reply fa-rotate-180"></i>
+                                                </div>
+                                            </s_if_var_rgy-main-tryangle>
+                                        </div>
+                                    </s_cover_item>
+                                </div>
+                            </div>
+                        </s_cover>
+
+                        <!-- 그리드 커버 -->
+                        <s_cover name="rgy-cover-grid">
+                            <div class="rgy-cover-grid-wrap rgyCoverElement">
+                                <h1><i class="fas fa-caret-down"></i>[##_cover_title_##]</h1>
+                                <div class="rgy-cover-grid-flex">
+                                    <s_cover_item>
+                                        <div class="rgy-cover-grid-wrap-inner" onclick="location.href='[##_cover_item_url_##]';">
+                                            <div class="rgy-cover-grid-wrap-inner-left" style="background-image: url(<s_if_var_rgy-thumbnail>[##_var_rgy-thumbnail_##]</s_if_var_rgy-thumbnail><s_not_var_rgy-thumbnail>./images/ch.gif</s_not_var_rgy-thumbnail>);">
+                                                <s_cover_item_thumbnail>
+                                                    <div class="thumnailWrap">
+                                                        <div class="thumnail" style="background-image: url('[##_cover_item_thumbnail_##]');"></div>
+                                                    </div>
+                                                </s_cover_item_thumbnail>
+                                            </div>
+                                            <div class="rgy-cover-grid-wrap-inner-right">
+                                                <div class="rgy-cover-grid-wrap-inner-right-top">
+                                                    <h1 class="title">[##_cover_item_title_##]</h1>
+                                                    <div class="summary">[##_cover_item_summary_##]</div>
+                                                </div>
+                                                <div class="rgy-cover-grid-wrap-inner-right-bottom">
+                                                    <s_cover_item_article_info>
+                                                        <div class="category"><i class="fas fa-network-wired"></i>[##_cover_item_category_##]</div>
+                                                        <div class="date"><i class="far fa-calendar"></i>[##_cover_item_simple_date_##]</div>
+                                                    </s_cover_item_article_info>
+                                                    <s_cover_item_not_article_info>
+                                                        <div class="url"><i class="fas fa-link"></i>[##_cover_item_url_##]</div>
+                                                    </s_cover_item_not_article_info>
+                                                </div>
+                                            </div>
+                                            <s_if_var_rgy-main-tryangle>
+                                                <div class="rgy-cover-more">
+                                                    <i class="fa fa-reply fa-rotate-180"></i>
+                                                </div>
+                                            </s_if_var_rgy-main-tryangle>
+                                        </div>
+                                    </s_cover_item>
+                                </div>
+                            </div>
+                        </s_cover>
+
+                        <!-- 리스트 커버 -->
+                        <s_cover name="rgy-cover-list">
+                            <div class="rgy-cover-list-wrap rgyCoverElement">
+                                <h1><i class="fas fa-caret-down"></i>[##_cover_title_##]</h1>
+                                <s_cover_item>
+                                    <div class="rgy-cover-list-wrap-inner" onclick="location.href='[##_cover_item_url_##]';">
+                                        <div class="rgy-cover-list-wrap-inner-left" style="background-image: url(<s_if_var_rgy-thumbnail>[##_var_rgy-thumbnail_##]</s_if_var_rgy-thumbnail><s_not_var_rgy-thumbnail>./images/ch.gif</s_not_var_rgy-thumbnail>);">
+                                            <s_cover_item_thumbnail>
+                                                <div class="thumnailWrap">
+                                                    <div class="thumnail" style="background-image: url('[##_cover_item_thumbnail_##]');"></div>
+                                                </div>
+                                            </s_cover_item_thumbnail>
+                                        </div>
+                                        <div class="rgy-cover-list-wrap-inner-right">
+                                            <div class="rgy-cover-list-wrap-inner-right-top">
+                                                <h1 class="title">[##_cover_item_title_##]</h1>
+                                                <div class="summary">[##_cover_item_summary_##]</div>
+                                            </div>
+                                            <div class="rgy-cover-list-wrap-inner-right-bottom">
+                                                <s_cover_item_article_info>
+                                                    <div class="category"><i class="fas fa-network-wired"></i>[##_cover_item_category_##]</div>
+                                                    <div class="date"><i class="far fa-calendar"></i>[##_cover_item_simple_date_##]</div>
+                                                </s_cover_item_article_info>
+                                                <s_cover_item_not_article_info>
+                                                    <div class="url"><i class="fas fa-link"></i>[##_cover_item_url_##]</div>
+                                                </s_cover_item_not_article_info>
+                                            </div>
+                                        </div>
+                                        <s_if_var_rgy-main-tryangle>
+                                            <div class="rgy-cover-more">
+                                                <i class="fa fa-reply fa-rotate-180"></i>
+                                            </div>
+                                        </s_if_var_rgy-main-tryangle>
+                                    </div>
+
+                                    <s_if_var_rgy-cover-list-infeed-adss-onoff>
+                                        <div class="rgy-cover-list-infeedAdsense">
+                                            <script>
+                                                chIfdStart++;
+                                                if (chIfdStart % chCoverListIfdNum == 0) {
+                                                    document.write('<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout="image-side" data-ad-layout-key="' + chCoverListIfdLKey + '" data-ad-client="' + chIfdCId + '" data-ad-slot="' + chCoverListIfdSlot + '"><\/ins>');
+                                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                                }
+
+                                            </script>
+                                        </div>
+                                    </s_if_var_rgy-cover-list-infeed-adss-onoff>
+                                </s_cover_item>
+                            </div>
+                        </s_cover>
+                    </s_cover_rep>
+                </s_cover_group>
+                <!-- 커버 끝 -->
+
+                <!-- 본문 시작 -->
+                <s_article_rep>
+                    <!-- 인덱스 페이지 시작 -->
+                    <s_index_article_rep>
+                        <div class="index-list-content">
+                            <div class="index-list-content-inner">
+                                <a href="[##_article_rep_link_##]" class="index-inner-left" style="background-image: url(<s_if_var_rgy-thumbnail>[##_var_rgy-thumbnail_##]</s_if_var_rgy-thumbnail><s_not_var_rgy-thumbnail>./images/ch.gif</s_not_var_rgy-thumbnail>);">
+                                    <s_article_rep_thumbnail>
+                                        <div class="rgy-index-img" style="background-image: url('[##_article_rep_thumbnail_url_##]');"></div>
+                                    </s_article_rep_thumbnail>
+                                </a>
+                                <div class="index-inner-right">
+                                    <a href="[##_article_rep_link_##]" class="link_post">
+                                        <h1 class="tit_post">[##_article_rep_title_##]</h1>
+                                        <p class="txt_post">[##_article_rep_summary_##]</p>
+                                    </a>
+                                    <div class="detail_info">
+                                        <a href="[##_article_rep_category_link_##]" class="link_cate"><i class="fas fa-network-wired"></i>[##_article_rep_category_##]</a>
+                                        <span class="txt_bar"><i class="far fa-calendar"></i>[##_article_rep_date_##]</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <s_if_var_rgy-main-tryangle>
+                                <a href="[##_article_rep_link_##]">
+                                    <div class="rgy-index-more">
+                                        <i class="fa fa-reply fa-rotate-180"></i>
+                                    </div>
+                                </a>
+                            </s_if_var_rgy-main-tryangle>
+                        </div>
+
+                        <s_if_var_rgy-cover-list-infeed-adss-onoff>
+                            <div class="rgy-index-infeedAdsense">
+                                <script>
+                                    chIfdStart++;
+                                    if (chIfdStart % chCoverListIfdNum == 0) {
+                                        document.write('<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout="image-side" data-ad-layout-key="' + chCoverListIfdLKey + '" data-ad-client="' + chIfdCId + '" data-ad-slot="' + chCoverListIfdSlot + '"><\/ins>');
+                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                    }
+
+                                </script>
+                            </div>
+                        </s_if_var_rgy-cover-list-infeed-adss-onoff>
+                    </s_index_article_rep>
+                    <!-- 인덱스 페이지 끝 -->
+
+                    <!-- 퍼머링크 페이지 시작 -->
+                    <s_permalink_article_rep>
+                        <!-- 포스트 상단 (제목/날짜 등) 시작 -->
+                        <div class="titleWrap">
+                            <h1><a href="[##_article_rep_link_##]">[##_article_rep_title_##]</a></h1>
+                            <div class="into_titlewrap">
+                                <div class="category">
+                                    <a href="[##_article_rep_category_link_##]"><i class="fas fa-list"></i>[##_article_rep_category_##]</a>
+                                </div>
+                                <div class="date">
+                                    <i class="far fa-clock"></i>[##_article_rep_date_##]
+                                </div>
+
+                                <!-- 글 관리 기능 (수정 및 삭제 등) -->
+                                <s_ad_div>
+                                    <div class="admin">
+                                        <a href="[##_s_ad_m_link_##]">수정</a>
+                                        <a href="#" onclick="[##_s_ad_m_onclick_##]">수정(새창)</a>
+                                        <a href="#" onclick="[##_s_ad_s2_onclick_##]">[##_s_ad_s2_label_##]</a>
+                                        <a href="#" onclick="[##_s_ad_t_onclick_##]">관련글(트랙백)</a>
+                                        <a href="#" onclick="[##_s_ad_d_onclick_##]">삭제</a>
+                                    </div>
+                                </s_ad_div>
+                                <!-- 글 관리 기능 끝 -->
+                            </div>
+                        </div>
+                        <!-- 포스트 상단 끝 -->
+
+                        <!-- 진짜본문 시작 -->
+                        <div class="article">
+
+                            <!-- 본문상단 애드센스 -->
+                            <s_if_var_rgy-article-top-adss>
+                                <div style="margin-bottom:30px; text-align: center;">
+                                    <ins class="adsbygoogle adsense_1" data-full-width-responsive="true" data-ad-client="[##_var_rgy-adss-client_##]" data-ad-slot="[##_var_rgy-article-top-adss-slot-left_##]"></ins>
+                                    <script>
+                                        (adsbygoogle = window.adsbygoogle || []).push({});
+
+                                    </script>
+                                    <div class="adsense_empty"></div>
+                                    <ins class="adsbygoogle adsense_2" data-full-width-responsive="true" data-ad-client="[##_var_rgy-adss-client_##]" data-ad-slot="[##_var_rgy-article-top-adss-slot-right_##]"></ins>
+                                    <script>
+                                        (adsbygoogle = window.adsbygoogle || []).push({});
+
+                                    </script>
+                                </div>
+                            </s_if_var_rgy-article-top-adss>
+
+                            <!-- 찐본문 시작 -->
+                            <section>[##_article_rep_desc_##]</section>
+                            <!-- 찐본문 끝 -->
+
+                            <!-- 본문하단 애드센스 -->
+                            <s_if_var_rgy-article-bottom-adss>
+                                <ins class="adsbygoogle" style="display:block; margin-top: 30px;" data-ad-client="[##_var_rgy-adss-client_##]" data-ad-slot="[##_var_rgy-article-bottom-adss-slot_##]" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+
+                                </script>
+                            </s_if_var_rgy-article-bottom-adss>
+
+                            <!-- 본문하단 일치하는 콘텐츠 -->
+                            <s_if_var_rgy-article-bottom-targetcontent-adss>
+                                <ins class="adsbygoogle" style="display:block; margin-top: 30px;" data-ad-client="[##_var_rgy-adss-client_##]" data-ad-slot="[##_var_rgy-article-bottom-targetcontent-adss-slot_##]" data-ad-format="autorelaxed"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+
+                                </script>
+                            </s_if_var_rgy-article-bottom-targetcontent-adss>
+                        </div>
+                        <!-- 진짜본문 끝 -->
+
+                        <!-- 본문 아래: 태그, 공유, 관련글, 댓글 시작 -->
+                        <div class="article-bottom">
+                            <s_sidebar>
+                                <s_sidebar_element>
+                                    <!--본문 태그-->
+                                    <s_tag_label>
+                                        <div class="tagTrail">
+                                            <span class="tagText">TAG : </span> [##_tag_label_rep_##]
+                                        </div>
+                                    </s_tag_label>
+                                </s_sidebar_element>
+
+                                <s_sidebar_element>
+                                    <!--본문 공유-->
+                                    <div class="rgyShare">
+                                        <h3>공유하기</h3>
+                                        <div class="rgyShare-inner">
+                                            <a href="#" target="_blank" onclick="javascript:window.open( 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent( document.URL )+'&t=' + encodeURIComponent( document.title ), 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, width=600, height=600' ); return false;" title="페이스북"><img src="./images/logo_facebook.gif" alt="facebook"></a>
+                                            <a href="#" target="_blank" onclick="javascript:window.open( 'https://twitter.com/intent/tweet?text=' + encodeURIComponent( document.title ) + '%20(' + encodeURIComponent( document.URL ) + ')', 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, width=600, height=600' ); return false;" title="트위터"><img src="./images/logo_twitter.gif" alt="twitter"></a>
+                                            <a href="javascript:ShareKakaoTalk()" title="카카오톡"><img src="./images/logo_kakao.gif" alt="kakaoTalk"></a>
+                                            <a href="#" target="_blank" onclick="javascript:window.open( 'https://story.kakao.com/share?url=' + encodeURIComponent( document.URL ), 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, width=600, height=600' ); return false;" title="카카오스토리"><img src="./images/logo_kakaostory.gif" alt="kakaostory"></a>
+                                            <a href="#" target="_blank" onclick="javascript:window.open( 'https://share.naver.com/web/shareView.nhn?url=' + encodeURIComponent( document.URL ) + '&title=' + encodeURIComponent( document.title ), 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, width=600, height=600' ); return false;" title="네이버"><img src="./images/logo_naver.gif" alt="naver"></a>
+                                            <a href="#" target="_blank" onclick="javascript:window.open( 'https://band.us/plugin/share?url=' + encodeURIComponent(document.URL) + '&title=' + encodeURIComponent(document.title), 'menubar=no, toolbar=no, resizable=yes, scrollbars=yes, height=600, width=600' ); return false;" title="밴드"><img src="./images/logo_band.gif" alt="band"></a>
+                                        </div>
+                                    </div>
+                                </s_sidebar_element>
+
+                                <s_sidebar_element>
+                                    <!--본문 관련글-->
+                                    <s_article_related>
+                                        <div class="area_related">
+                                            <h3 class="tit_related">'[##_article_rep_category_##]' 의 관련글</h3>
+                                            <ul class="list_related">
+                                                <s_article_related_rep>
+                                                    <li class="[##_article_related_rep_type_##]">
+                                                        <a href="[##_article_related_rep_link_##]" class="link_related">
+                                                            <div class="link-related-left">
+                                                                <s_article_related_rep_thumbnail>
+                                                                    <span class="thumb_related">
+                                                                        <div class="thumb-related-img" style="background-image: url('[##_article_related_rep_thumbnail_link_##]');">
+                                                                        </div>
+                                                                    </span>
+                                                                </s_article_related_rep_thumbnail>
+                                                            </div>
+                                                            <div class="link-related-right">
+                                                                <span class="txt_related">[##_article_related_rep_title_##]</span>
+                                                                <span class="date_related"><i class="far fa-clock"></i>[##_article_related_rep_date_##]</span>
+                                                            </div>
+                                                            <div class="link-more">더보기</div>
+                                                        </a>
+                                                    </li>
+                                                </s_article_related_rep>
+                                            </ul>
+                                        </div>
+                                    </s_article_related>
+                                </s_sidebar_element>
+                            </s_sidebar>
+
+                            <s_if_var_rgy-comment-onoff>
+                                <!-- 댓글 갯수 -->
+                                <div class="re-count">
+                                    <span class="addcomment">
+                                        <a href="#rp" onclick="[##_article_rep_rp_link_##]"><i class="far fa-comment-dots"></i>
+                                            <s_rp_count><span class="cnt">[##_article_rep_rp_cnt_##]</span></s_rp_count>
+                                        </a>
+                                    </span>
+                                </div>
+
+                                <!-- 댓글 시작 -->
+                                <s_rp>
+                                    <div class="comment">
+                                        <div class="comment-h3">
+                                            <h3>댓글</h3>
+                                        </div>
+                                        <!-- 댓글 남기기 시작 -->
+                                        <s_rp_input_form>
+                                            <div class="commentWrite">
+                                                <s_rp_member>
+                                                    <s_rp_guest>
+                                                        <div class="re3-options">
+                                                            <p class="re-name">
+                                                                <label for="name"></label>
+                                                                <input type="text" name="[##_rp_input_name_##]" value="[##_guest_name_##]" placeholder="이름" onfocus="this.placeholder=''" onblur="this.placeholder='이름'">
+                                                            </p>
+                                                            <p class="re-password">
+                                                                <label for="password"></label>
+                                                                <input type="password" maxlength="8" name="[##_rp_input_password_##]" value="[##_rp_admin_check_##]" placeholder="비밀번호" onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호'">
+                                                            </p>
+                                                            <p class="re-homepage">
+                                                                <label for="homepage"></label>
+                                                                <input type="text" class="homepage" name="[##_rp_input_homepage_##]" value="[##_guest_homepage_##]">
+                                                            </p>
+                                                        </div>
+                                                    </s_rp_guest>
+                                                    <div class="CommentSecretWrap">
+                                                        <input type="checkbox" name="[##_rp_input_is_secret_##]" id="secretCmt" class="sr-only">
+                                                        <label for="secretCmt">
+                                                            <p></p>
+                                                        </label>
+                                                        <span class="rgyCommentSecretCheck">비밀글모드</span>
+                                                    </div>
+                                                </s_rp_member>
+                                                <p>
+                                                    <textarea name="[##_rp_input_comment_##]" rows="10" cols="50" placeholder="인터넷은 우리가 함께 만들어가는 소중한 공간입니다. 댓글 작성 시 타인에 대한 배려와 책임을 담아주세요." onfocus="this.placeholder=''" onblur="this.placeholder='인터넷은 우리가 함께 만들어가는 소중한 공간입니다. 댓글 작성 시 타인에 대한 배려와 책임을 담아주세요.'"></textarea>
+                                                </p>
+                                                <p>
+                                                    <input class="reBtn" type="submit" value="댓글 남기기" onclick="[##_rp_onclick_submit_##]" />
+                                                </p>
+                                            </div>
+                                        </s_rp_input_form>
+                                        <!-- 댓글 남기기 끝 -->
+
+                                        <!-- 댓글 리스트 시작 -->
+                                        <div id="rp" class="commentList">
+
+                                            <!-- 댓글 남기기 창 -->
+                                            <s_rp_container>
+                                                <ol class="rgy-reply">
+                                                    <s_rp_rep>
+                                                        <li id="[##_rp_rep_id_##]">
+                                                            <div class="rgy-rewrite-window">
+                                                                <div class="[##_rp_rep_class_##]">
+                                                                    <div class="rgy-rewrite-window-left" style="background-image: url([##_rp_rep_logo_##])"></div>
+                                                                    <div class="rgy-rewrite-window-right">
+                                                                        <div class="rgy-rewrite-window-right-top">
+                                                                            <span class="re-name">[##_rp_rep_name_##]</span>
+                                                                            <span class="re-btn">
+                                                                                <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify" title="수정/삭제"><i class="fas fa-cog"></i></a>
+                                                                                <a href="#" onclick="[##_rp_rep_onclick_reply_##]" class="write" title="댓글"><i class="fas fa-pen"></i></a>
+                                                                            </span>
+                                                                        </div>
+                                                                        <div class="rgy-rewrite-window-right-bottom">
+                                                                            <div class="re-chatwindow"><i class="fab fa-affiliatetheme"></i>[##_rp_rep_desc_##]</div>
+                                                                            <span class="re-date">[##_rp_rep_date_##]</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- 댓글에 대한 답글 -->
+                                                            <s_rp2_container>
+                                                                <ul>
+                                                                    <s_rp2_rep>
+                                                                        <li id="[##_rp_rep_id_##]">
+                                                                            <div class="rgy-rewrite-window2">
+                                                                                <div class="[##_rp_rep_class_##]">
+                                                                                    <div class="rgy-rewrite-window2-left" style="background-image: url([##_rp_rep_logo_##])"></div>
+                                                                                    <div class="rgy-rewrite-window2-right">
+                                                                                        <div class="rgy-rewrite-window2-right-top">
+                                                                                            <span class="re-btn">
+                                                                                                <a href="#" onclick="[##_rp_rep_onclick_delete_##]" class="modify" title="수정/삭제"><i class="fas fa-cog"></i></a>
+                                                                                            </span>
+                                                                                            <span class="re-name">[##_rp_rep_name_##]</span>
+                                                                                        </div>
+                                                                                        <div class="rgy-rewrite-window2-right-bottom">
+                                                                                            <div class="re-chatwindow"><i class="fab fa-affiliatetheme"></i>[##_rp_rep_desc_##]</div>
+                                                                                            <span class="re-date">[##_rp_rep_date_##]</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </li>
+                                                                    </s_rp2_rep>
+                                                                </ul>
+                                                            </s_rp2_container>
+                                                        </li>
+                                                    </s_rp_rep>
+                                                </ol>
+                                            </s_rp_container>
+                                        </div>
+                                        <!-- 댓글 리스트 끝 -->
+
+                                    </div>
+                                </s_rp>
+                            </s_if_var_rgy-comment-onoff>
+                            <!-- 댓글 끝 -->
+                        </div>
+                        <!-- 본문 아래: 태그, 공유, 관련글, 댓글 끝 -->
+
+                    </s_permalink_article_rep>
+                    <!-- 퍼머링크 끝 -->
+
+                </s_article_rep>
+                <!-- 본문 끝 -->
+
+                <!-- 방명록 시작 -->
+                <s_guest>
+                    <div class="guest">
+                        <div class="guest-title">
+                            <h3>방명록</h3>
+                        </div>
+                        <s_guest_input_form>
+                            <div class="guestWrite">
+                                <s_guest_member>
+                                    <s_guest_form>
+                                        <div class="guest3-options">
+                                            <div>
+                                                <label for="name"></label>
+                                                <input type="text" name="[##_guest_input_name_##]" value="[##_guest_name_##]" placeholder="이름" onfocus="this.placeholder=''" onblur="this.placeholder='이름'">
+                                            </div>
+                                            <div>
+                                                <label for="password"></label>
+                                                <input type="password" maxlength="8" name="[##_guest_input_password_##]" value="[##_guest_password_##]" placeholder="비밀번호" onfocus="this.placeholder=''" onblur="this.placeholder='비밀번호'">
+                                            </div>
+                                            <div>
+                                                <label for="homepage"></label>
+                                                <input type="text" name="[##_guest_input_homepage_##]" value="[##_guest_homepage_##]">
+                                            </div>
+                                        </div>
+                                    </s_guest_form>
+                                    <div class="guestSecretWrap">
+                                        <input type="checkbox" name="secret" value="1" id="secretGb" class="sr-only">
+                                        <label for="secretGb">
+                                            <p></p>
+                                        </label>
+                                        <span class="secret"></span>
+                                        <span class="rgyGuestSecretCheck">비밀글모드</span>
+                                    </div>
+                                </s_guest_member>
+                                <div>
+                                    <textarea name="[##_guest_textarea_body_##]" cols="50" rows="6" placeholder="인터넷은 우리가 함께 만들어가는 소중한 공간입니다. 댓글 작성 시 타인에 대한 배려와 책임을 담아주세요." onfocus="this.placeholder=''" onblur="this.placeholder='인터넷은 우리가 함께 만들어가는 소중한 공간입니다. 댓글 작성 시 타인에 대한 배려와 책임을 담아주세요.'"></textarea>
+                                </div>
+                                <div>
+                                    <input class="guestBtn" type="submit" value="글남기기" onclick="[##_guest_onclick_submit_##]">
+                                </div>
+                                <div class="rgy-empty"></div>
+                            </div>
+                        </s_guest_input_form>
+
+                        <s_guest_container>
+                            <div class="guestList">
+                                <ol>
+                                    <s_guest_rep>
+                                        <li id="[##_guest_rep_id_##]">
+                                            <div class="rgy-rewrite-window">
+                                                <div class="[##_guest_rep_class_##]">
+                                                    <div class="rgy-rewrite-window-top">
+                                                        <div class="rgy-rewrite-info">
+                                                            <span class="name">[##_guest_rep_name_##]</span>
+                                                            <span class="date"> [##_guest_rep_date_##]</span>
+                                                        </div>
+                                                    </div>
+                                                    <p>[##_guest_rep_desc_##]</p>
+                                                    <div class="re-control">
+                                                        <div class="re-btn">
+                                                            <a href="#" onclick="[##_guest_rep_onclick_delete_##]" class="modify">
+                                                                <span>수정/삭제</span>
+                                                            </a>
+                                                            <a href="#" onclick="[##_guest_rep_onclick_reply_##]" class="write">
+                                                                <span>답글쓰기</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <s_guest_reply_container>
+                                                <ul>
+                                                    <s_guest_reply_rep>
+                                                        <li id="[##_guest_rep_id_##]">
+                                                            <div class="rgy-rewrite-window rgy-rewrite-window2">
+                                                                <div class="rgy-div-re-icon"><i class="fa fa-reply fa-rotate-180"></i></div>
+                                                                <div class="[##_guest_rep_class_##]">
+                                                                    <div class="rgy-rewrite-info">
+                                                                        <span class="name">[##_guest_rep_name_##]</span>
+                                                                        <span class="date"> [##_guest_rep_date_##]</span>
+                                                                    </div>
+                                                                    <p>[##_guest_rep_desc_##]</p>
+                                                                    <span class="re-control">
+                                                                        <div class="re-btn">
+                                                                            <a href="#" onclick="[##_guest_rep_onclick_delete_##]">
+                                                                                <span>수정/삭제</span>
+                                                                            </a>
+                                                                        </div>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </s_guest_reply_rep>
+                                                </ul>
+                                            </s_guest_reply_container>
+                                        </li>
+                                    </s_guest_rep>
+                                </ol>
+                            </div>
+                        </s_guest_container>
+                    </div>
+                </s_guest>
+                <!-- 방명록 끝 -->
+
+                <!-- 태그 클라우드 시작 -->
+                <s_tag>
+                    <div class="taglog">
+                        <h3>태그 클라우드</h3>
+                        <ul>
+                            <s_tag_rep>
+                                <li>
+                                    <a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##]</a>
+                                </li>
+                            </s_tag_rep>
+                        </ul>
+                    </div>
+                </s_tag>
+                <!-- 태그 클라우드 끝 -->
+
+                <!-- 페이징 시작 -->
+                <s_paging>
+                    <div class="paging-wrap">
+                        <div class="paging">
+                            <a [##_prev_page_##] class="[##_no_more_prev_##]">◀</a>
+                            <span class="numbox">
+                                <s_paging_rep>
+                                    <a [##_paging_rep_link_##] class="num">[##_paging_rep_link_num_##]</a>
+                                </s_paging_rep>
+                            </span>
+                            <a [##_next_page_##] class="[##_no_more_next_##]">▶</a>
+                        </div>
+                    </div>
+                </s_paging>
+                <!-- 페이징 끝 -->
+
+                <div id="rgyTistoryGoogleADLower">[##_revenue_list_lower_##]</div>
+
+            </div>
+            <!-- 콘텐츠 영역 끝 -->
+
+            <!-- 사이드바 시작 -->
+            <div id="sidebar" class="<s_if_var_rgy-sidebar-live-element>[##_var_rgy-sidebar-live-element_##]</s_if_var_rgy-sidebar-live-element>">
+                <aside>
+                    <s_sidebar>
+
+                        <s_sidebar_element>
+                            <!--공지사항-->
+                            <s_rct_notice>
+                                <div class="notice rgy-sidebar-title rgy-sidebar-content">
+                                    <h3 class="title">공지사항</h3>
+                                    <ul>
+                                        <s_rct_notice_rep>
+                                            <li>
+                                                <a href="[##_notice_rep_link_##]">[##_notice_rep_title_##]</a>
+                                            </li>
+                                        </s_rct_notice_rep>
+                                    </ul>
+                                </div>
+                            </s_rct_notice>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--블로그정보(프로필)-->
+                            <div class="blogInfo rgy-sidebar-title rgy-sidebar-content">
+                                <h3>프로필</h3>
+                                <ul>
+                                    <s_if_var_rgy-profile-img>
+                                        <li>
+                                            <img class="blogInfoImg" src="[##_image_##]" alt="블로그 이미지">
+                                        </li>
+                                    </s_if_var_rgy-profile-img>
+                                    <li class="blogInfo-text">
+                                        <p>
+                                            <s_if_var_rgy-blogger-name>[##_var_rgy-blogger-name_##]</s_if_var_rgy-blogger-name>
+                                            <s_not_var_rgy-blogger-name>[##_blogger_##]</s_not_var_rgy-blogger-name>
+                                        </p>
+                                        <p>[##_desc_##]</p>
+                                    </li>
+                                    <s_if_var_rgy-profile-sns>
+                                        <li class="blogInfo-sns">
+                                            <p>
+                                                <s_if_var_favorite-icon>
+                                                    <a href="[##_var_favorite_##]" target="_blank" title="즐겨찾기"><i class="fas fa-external-link-square-alt"></i></a>
+                                                </s_if_var_favorite-icon>
+                                                <s_if_var_facebook-icon>
+                                                    <a href="[##_var_facebook_##]" target="_blank" title="페이스북"><i class="fab fa-facebook-square"></i></a>
+                                                </s_if_var_facebook-icon>
+                                                <s_if_var_twitter-icon>
+                                                    <a href="[##_var_twitter_##]" target="_blank" title="트위터"><i class="fab fa-twitter-square"></i></a>
+                                                </s_if_var_twitter-icon>
+                                                <s_if_var_instagram-icon>
+                                                    <a href="[##_var_instagram_##]" target="_blank" title="인스타그램"><i class="fab fa-instagram"></i></a>
+                                                </s_if_var_instagram-icon>
+                                                <s_if_var_youtube-icon>
+                                                    <a href="[##_var_youtube_##]" target="_blank" title="유튜브"><i class="fab fa-youtube"></i></a>
+                                                </s_if_var_youtube-icon>
+                                                <s_if_var_twitch-icon>
+                                                    <a href="[##_var_twitch_##]" target="_blank" title="트위치"><i class="fab fa-twitch"></i></a>
+                                                </s_if_var_twitch-icon>
+                                                <s_if_var_github-icon>
+                                                    <a href="[##_var_github_##]" target="_blank" title="깃헙"><i class="fab fa-github-square"></i></a>
+                                                </s_if_var_github-icon>
+                                                <s_if_var_kakaotalk-icon>
+                                                    <a href="[##_var_kakaotalk_##]" target="_blank" title="카카오톡"><i class="fab fa-kickstarter"></i></a>
+                                                </s_if_var_kakaotalk-icon>
+                                                <s_if_var_email-icon>
+                                                    <a href="mailto:[##_var_email_##]" target="_blank" title="이메일"><i class="fas fa-envelope"></i></a>
+                                                </s_if_var_email-icon>
+                                            </p>
+                                        </li>
+                                    </s_if_var_rgy-profile-sns>
+                                    <s_if_var_rgy-business-info>
+                                        <div class="rgy-buness-info">
+                                            <h3>사업자 정보</h3>
+                                            <ul>
+                                                <li>상호명 : <span>[##_var_rgy-sangho_##]</span></li>
+                                                <li>대표 : <span>[##_var_rgy-daepyo_##]</span></li>
+                                                <li>사업자등록번호 : <span>[##_var_rgy-business-num_##]</span></li>
+                                                <s_if_var_rgy-singo-num-onoff>
+                                                    <li>통신판매신고번호 : <span>[##_var_rgy-singo-num_##]</span></li>
+                                                </s_if_var_rgy-singo-num-onoff>
+                                                <li>주소 : <span>[##_var_rgy-adress_##]</span></li>
+                                                <li>연락처 : <span>[##_var_rgy-phone_##]</span></li>
+                                                <li>이메일 : <span>[##_var_rgy-email_##]</span></li>
+                                                <li>사이버몰 이용약관 <span><a href="[##_var_rgy-cybermall-url_##]" target="_blank">바로가기</a></span></li>
+                                            </ul>
+                                        </div>
+                                    </s_if_var_rgy-business-info>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--디데이-->
+                            <div class="rgy-sidebar-title rgy-sidebar-content">
+                                <h3>디데이</h3>
+                                <ul id="dDay">
+                                    <s_if_var_rgy-dday1>
+                                        <li class="dday1">
+                                            <span class="ddayWord">[##_var_rgy-dday-keyword1_##]</span>
+                                            <span class="ddayColor">
+                                                <script>
+                                                    ddaying();
+
+                                                </script>
+                                            </span>
+                                            <span>일째</span>
+                                        </li>
+                                    </s_if_var_rgy-dday1>
+                                    <s_if_var_rgy-dday2>
+                                        <li class="dday2">
+                                            <span class="ddayWord">[##_var_rgy-dday-keyword2_##]</span>
+                                            <span class="ddayColor">
+                                                <script>
+                                                    ddayCount();
+
+                                                </script>
+                                            </span>
+                                            <span>일 남음</span>
+                                        </li>
+                                    </s_if_var_rgy-dday2>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--링크-->
+                            <div class="rgy-sidebar-title rgy-sidebar-content">
+                                <h3>링크</h3>
+                                <ul>
+                                    <s_link_rep>
+                                        <li><a href="[##_link_url_##]" target="_blank">[##_link_site_##]</a></li>
+                                    </s_link_rep>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--스트리밍-->
+                            <div class="rgyLive rgy-sidebar-title rgy-sidebar-content">
+                                <h3>
+                                    <s_if_var_rgylive-title>[##_var_rgylive-title_##]</s_if_var_rgylive-title>
+                                    <s_not_var_rgylive-title>스트리밍</s_not_var_rgylive-title>
+                                </h3>
+                                <a href="<s_if_var_rgylive-url>[##_var_rgylive-url_##]</s_if_var_rgylive-url>" target="_blank">
+                                    <div class="rgylive-icon">
+                                        <s_if_var_rgylive-icon-youtube><i class="fab fa-youtube"></i></s_if_var_rgylive-icon-youtube>
+                                        <s_if_var_rgylive-icon-twitch><i class="fab fa-twitch"></i></s_if_var_rgylive-icon-twitch>
+                                    </div>
+                                    <div class="rgylive-textbox">[##_var_rgylive-text_##]</div>
+                                </a>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--추천글(HTML편집)-->
+                            <div class="rgy-sidebar-title rgy-sidebar-content-recommend">
+                                <h3>추천글</h3>
+                                <ul>
+                                    <li><a href="/" target="_blank">제목을 입력하세요<span class="rgyBadge">HOT</span></a></li>
+                                    <li><a href="/" target="_blank">제목을 입력하세요</a></li>
+                                    <li><a href="/" target="_blank">제목을 입력하세요</a></li>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--추천글(스킨편집)-->
+                            <div class="rgy-sidebar-title rgy-sidebar-content-recommend">
+                                <h3>
+                                    <s_if_var_recommend-title>[##_var_recommend-title_##]</s_if_var_recommend-title>
+                                    <s_not_var_recommend-title>추천글</s_not_var_recommend-title>
+                                </h3>
+                                <ul>
+                                    <s_if_var_rgy-recommend1>
+                                        <li>
+                                            <a href="<s_if_var_recommend-link1>[##_var_recommend-link1_##]</s_if_var_recommend-link1>" target="_blank">[##_var_recommend-text1_##]
+                                                <s_if_var_recommend-hot-badge1><span class="rgyBadge">HOT</span></s_if_var_recommend-hot-badge1>
+                                                <s_if_var_recommend-new-badge1><span class="rgyBadge">NEW</span></s_if_var_recommend-new-badge1>
+                                            </a>
+                                        </li>
+                                    </s_if_var_rgy-recommend1>
+                                    <s_if_var_rgy-recommend2>
+                                        <li>
+                                            <a href="<s_if_var_recommend-link2>[##_var_recommend-link2_##]</s_if_var_recommend-link2>" target="_blank">[##_var_recommend-text2_##]
+                                                <s_if_var_recommend-hot-badge2><span class="rgyBadge">HOT</span></s_if_var_recommend-hot-badge2>
+                                                <s_if_var_recommend-new-badge2><span class="rgyBadge">NEW</span></s_if_var_recommend-new-badge2>
+                                            </a>
+                                        </li>
+                                    </s_if_var_rgy-recommend2>
+                                    <s_if_var_rgy-recommend3>
+                                        <li>
+                                            <a href="<s_if_var_recommend-link3>[##_var_recommend-link3_##]</s_if_var_recommend-link3>" target="_blank">[##_var_recommend-text3_##]
+                                                <s_if_var_recommend-hot-badge3><span class="rgyBadge">HOT</span></s_if_var_recommend-hot-badge3>
+                                                <s_if_var_recommend-new-badge3><span class="rgyBadge">NEW</span></s_if_var_recommend-new-badge3>
+                                            </a>
+                                        </li>
+                                    </s_if_var_rgy-recommend3>
+                                    <s_if_var_rgy-recommend4>
+                                        <li>
+                                            <a href="<s_if_var_recommend-link4>[##_var_recommend-link4_##]</s_if_var_recommend-link4>" target="_blank">[##_var_recommend-text4_##]
+                                                <s_if_var_recommend-hot-badge4><span class="rgyBadge">HOT</span></s_if_var_recommend-hot-badge4>
+                                                <s_if_var_recommend-new-badge4><span class="rgyBadge">NEW</span></s_if_var_recommend-new-badge4>
+                                            </a>
+                                        </li>
+                                    </s_if_var_rgy-recommend4>
+                                    <s_if_var_rgy-recommend5>
+                                        <li>
+                                            <a href="<s_if_var_recommend-link5>[##_var_recommend-link5_##]</s_if_var_recommend-link5>" target="_blank">[##_var_recommend-text5_##]
+                                                <s_if_var_recommend-hot-badge5><span class="rgyBadge">HOT</span></s_if_var_recommend-hot-badge5>
+                                                <s_if_var_recommend-new-badge5><span class="rgyBadge">NEW</span></s_if_var_recommend-new-badge5>
+                                            </a>
+                                        </li>
+                                    </s_if_var_rgy-recommend5>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--카테고리 바로가기 모듈-->
+                            <div id="rgyCategory"></div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--카테고리-->
+                            <div class="aside_category rgy-sidebar-title">
+                                <h3>카테고리</h3>
+                                [##_category_list_##]
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--인기글-->
+                            <div class="popularPost rgy-sidebar-title rgy-sidebar-content">
+                                <h3>인기글</h3>
+                                <ul>
+                                    <s_rctps_popular_rep>
+                                        <li>
+                                            <a href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
+                                        </li>
+                                    </s_rctps_popular_rep>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--최근글-->
+                            <div class="recentPost rgy-sidebar-title rgy-sidebar-content">
+                                <h3>최근글</h3>
+                                <ul>
+                                    <s_rctps_rep>
+                                        <li>
+                                            <a href="[##_rctps_rep_link_##]">[##_rctps_rep_title_##]</a>
+                                        </li>
+                                    </s_rctps_rep>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--최근댓글-->
+                            <div class="recentComment rgy-sidebar-title rgy-sidebar-content">
+                                <h3>최근댓글</h3>
+                                <ul id="recentComments">
+                                    <s_rctrp_rep>
+                                        <li>
+                                            <a href="[##_rctrp_rep_link_##]">[##_rctrp_rep_desc_##]</a>
+                                        </li>
+                                    </s_rctrp_rep>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--태그목록-->
+                            <div class="tagbox rgy-sidebar-title">
+                                <h3>태그목록</h3>
+                                <ul>
+                                    <s_random_tags>
+                                        <li>
+                                            <a href="[##_tag_link_##]" class="[##_tag_class_##]">[##_tag_name_##]</a>
+                                        </li>
+                                    </s_random_tags>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--달력-->
+                            <div class="calendar rgy-sidebar-title rgy-sidebar-content">
+                                <h3>달력</h3>
+                                <div class="calendar-inner">
+                                    [##_calendar_##]
+                                </div>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--글보관함-->
+                            <div class="archive rgy-sidebar-title rgy-sidebar-content">
+                                <h3>글보관함</h3>
+                                <ul>
+                                    <s_archive_rep>
+                                        <li>
+                                            <a href="[##_archive_rep_link_##]">
+                                                <span class="archive-date">[##_archive_rep_date_##]</span><span class="archive-count">[##_archive_rep_count_##]</span>
+                                            </a>
+                                        </li>
+                                    </s_archive_rep>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--방문자 카운터-->
+                            <div class="counter rgy-sidebar-title rgy-sidebar-content">
+                                <h3>방문자 카운터</h3>
+                                <ul>
+                                    <li class="rgy-counter-list">
+                                        <span class="yesterday">어제</span><span class="rgy-counter yesterday-count">[##_count_yesterday_##]</span>
+                                    </li>
+                                    <li class="rgy-counter-list">
+                                        <span class="today">오늘</span><span class="rgy-counter today-count">[##_count_today_##]</span>
+                                    </li>
+                                    <li class="rgy-counter-list">
+                                        <span class="total">누적</span><span class="rgy-counter total-count">[##_count_total_##]</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </s_sidebar_element>
+
+                        <s_sidebar_element>
+                            <!--방문자 그래프-->
+                            <div class="graph rgy-sidebar-title rgy-sidebar-content">
+                                <h3>방문자 그래프</h3>
+                                <p>[##_StatisticsGraph_##]</p>
+                            </div>
+                        </s_sidebar_element>
+
+                    </s_sidebar>
+                </aside>
+            </div>
+            <!-- 사이드바 끝 -->
+
+        </div>
+        <!-- 콘테이너: 사이드바 + 본문 끝 -->
+
+        <!-- 최하단 애드센스 시작 -->
+        <s_if_var_rgy-bottom-adss>
+            <div id="bottomAdss">
+                <ins class="adsbygoogle" style="display: block;" data-ad-client="[##_var_rgy-adss-client_##]" data-ad-slot="[##_var_rgy-bottom-adss-slot_##]" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+
+                </script>
+            </div>
+        </s_if_var_rgy-bottom-adss>
+        <!-- 최하단 애드센스 끝 -->
+
+        <!-- 최하단 빈공간 시작 -->
+        <div id="bottomEmpty"></div>
+        <!-- 최하단 빈공간 끝 -->
+
+
+        <!-- 푸터 시작 -->
+        <!-- 경고 : 푸터 영역은 절대 수정 금지! -->
+        <footer>
+            <div id="footer">
+                <div class="footer-inner">
+                    <p class="copyright">Copyright &copy; <a href="/">
+                            <s_if_var_rgy-blogger-name>[##_var_rgy-blogger-name_##]</s_if_var_rgy-blogger-name>
+                            <s_not_var_rgy-blogger-name>[##_blogger_##]</s_not_var_rgy-blogger-name>
+                        </a>. All Right Reserved.</p>
+                </div>
+            </div>
+        </footer>
+        <!-- 푸터 끝 -->
+
+        <script>
+            function fnLoginToggle() {};
+            $(function() {
+                if (window.T.config.USER.name) {
+                    $('#tab_login_toggle').html('<i class="fas fa-unlock" title="로그아웃"></i>');
+                    fnLoginToggle = function() {
+                        document.location.href = "https://www.tistory.com/auth/logout?redirectUrl=" + encodeURIComponent(window.location.href);
+                    };
+                } else {
+                    $('#tab_login_toggle').html('<i class="fas fa-lock" title="로그인"></i>');
+                    fnLoginToggle = function() {
+                        document.location.href = "https://www.tistory.com/auth/login?redirectUrl=" + encodeURIComponent(window.location.href);
+                    };
+                }
+            });
+
+        </script>
+
+        <!-- TOP버튼 + 글쓰기 관리자 카테고리 시작 -->
+        <div id="topBtn">
+            <ul>
+                <s_if_var_rgy-topbtn-set>
+                    <li>
+                        <a class="rgyWrite" href="/manage/newpost"><i class="fas fa-pen-nib"></i></a>
+                        <div class="topBtn-exp">
+                            <div class="topBtn-exp1">글쓰기</div>
+                            <div class="topBtn-exp2"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="rgyManage" href="/manage"><i class="fas fa-cog"></i></a>
+                        <div class="topBtn-exp">
+                            <div class="topBtn-exp1">관리자</div>
+                            <div class="topBtn-exp2"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="rgyManage" href="#rgyCategory"><i class="fas fa-bookmark"></i></a>
+                        <div class="topBtn-exp">
+                            <div class="topBtn-exp1">카테고리</div>
+                            <div class="topBtn-exp2"></div>
+                        </div>
+                    </li>
+                </s_if_var_rgy-topbtn-set>
+                <s_if_var_rgy-topbtn-list>
+                    <li>
+                        <div id="listBtn">
+                            <a class="rgyTOP" href="#rgyTOP"><i class="fas fa-bars"></i></a>
+                        </div>
+                        <div class="topBtn-exp">
+                            <div class="topBtn-exp1">목차</div>
+                            <div class="topBtn-exp2"></div>
+                        </div>
+                    </li>
+                </s_if_var_rgy-topbtn-list>
+                <s_if_var_rgy-topbtn-up>
+                    <li>
+                        <a class="rgyTop"><i class="fas fa-angle-double-up"></i></a>
+                        <div class="topBtn-exp">
+                            <div class="topBtn-exp1">맨위로</div>
+                            <div class="topBtn-exp2"></div>
+                        </div>
+                    </li>
+                </s_if_var_rgy-topbtn-up>
+            </ul>
+        </div>
+        <!-- TOP버튼 + 글쓰기 관리자 카테고리 끝 -->
+
+        <!-- TOC BODY 스크립트 -->
+        <script>
+            $(function() {
+                $("#toc").toc({
+                    content: "#toc-contents",
+                    headings: "h1,h2,h3,h4,h5,h6",
+                    numberate: true,
+                    autoId: true
+                });
+                $("#rgyTOC>#toc").prepend("&nbsp;");
+            });
+
+        </script>
+
+    </s_t3>
+
+    <s_if_var_rgy-ctrlc-ctrlv-prevention>
+        <script>
+            $(function() {
+                $(document).keydown(function(event) {
+                    if (event.ctrlKey == true && (event.which == '67' || event.which == '86')) {
+                        event.preventDefault();
+                    }
+                });
+            });
+
+        </script>
+    </s_if_var_rgy-ctrlc-ctrlv-prevention>
+
+    <s_if_var_rgy-bodycopy-prevention>
+        <script>
+            function mouseClickRight() {
+                if ((event.button == 2) || (event.button == 3)) {
+                    document.oncontextmenu = function() {
+                        return false;
+                    };
+                    document.body.ondragstart = function() {
+                        return false;
+                    };
+                    document.body.onselectstart = function() {
+                        return false;
+                    };
+                    document.body.oncopy = function() {
+                        return false;
+                    };
+                    document.body.onpaste = function() {
+                        return false;
+                    };
+                    return;
+                }
+            }
+            document.onmousedown = mouseClickRight;
+
+        </script>
+    </s_if_var_rgy-bodycopy-prevention>
+</body>
+
+</html>
