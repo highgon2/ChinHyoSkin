@@ -24,6 +24,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="./images/jquery_1.12.3.js"></script>
     <script src="./images/script.js"></script>
+
+    <!-- 티스토리 category redirect -->
+    <script type="text/javascript">
+        if(typeof(history.pushState) == 'function')
+        {
+            var CatagoryURL = location.href;
+            CatagoryURL = CatagoryURL.replace(/\?category=([0-9]+)/ig,'');
+            history.pushState(null, null, CatagoryURL);
+        }
+    </script>
+
     <!-- TOC 스크립트 -->
     <script src="./images/jquery.toc.min.js"></script>
 
